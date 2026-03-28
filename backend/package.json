@@ -1,0 +1,18 @@
+{
+  "name": "wie_2024_template_backend",
+  "version": "0.0.1",
+  "description": "Project template (backend) for Web and Internet Engineering 2024 at UniBZ / based on tutorial of arturguitelar",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [],
+  "author": "arturguitelar",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "sequelize": "^6.17.0",
+    "sqlite3": "^5.1.6"
+  }
+}

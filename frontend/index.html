@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<!-- Required meta tags -->
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+		<!-- Bootstrap CSS -->
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+		<!-- Custom CSS -->
+		<style>
+			.navbar { background-color: #2baaf7; };
+		</style>
+		<title>WIE - 2024/2025</title>
+	</head>
+	<body class="vh-100">
+	<nav class="navbar navbar-expand-lg navbar-light">
+		<div class="container-fluid">
+			<a class="navbar-brand" href="#">WIE - 2024/2025</a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+					<li class="nav-item">
+						<a class="nav-link active" aria-current="page" href="#">Home</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="https://gitlab.inf.unibz.it/wie_202425/project_template#">OLE - WIS</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<div class="container mt-3 h-75">
+		<div class="row h-100">
+			<div id="main-col" class="col-md-8">
+				<h1>Posts</h1>
+				
+			</div>
+			<div id="side-col" class="col-md-4 bg-light">
+				<h2>User</h2>
+			</div>
+		</div>
+	</div>
+
+	<!-- Option 1: Bootstrap Bundle with Popper -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+	<!-- jQuery 3.7.1 -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> 
+	<script type="text/javascript">
+	// Add a new sample Post for the user with id
+	function addPost(userId) {
+		$.ajax({
+			type: "POST",
+			url: "http://localhost:3333/api/posts",
+			contentType: "application/json; charset=utf-8",
+			dataType : "json",
+			data: JSON.stringify({
+				"title": "Another Post", 
+				"content": "Lorem ipsum",
+				"userId": userId,
+			}),
+			success: function(data) {
+				alert("success")
+			}, 
+			error: function(data) {
+				alert(data.status + " - " + data.statusText)
+			}   
+		});
+	}
+
+	// Get all users
+	function getUser() {
+		$.ajax({
+			type: "GET",
+			url: "http://localhost:3333/api/users/" + this.value,
+			dataType : "json",
+			success: function(data) {
+				if (data != null) {
+					$('#user-data').html("");
+					$('#user-data').append(
+						$('<div/>', {'class': 'pt-3'}).append(
+							$('<h5/>',{text: data.name + " (" + data.username + ")"})
+						).append(
+							$('<p/>',{text: data.email})
+						).append(
+							$('<input/>').attr({
+								type: "button",
+								id: "field",
+								value: "Add Post",
+								onclick: "addPost(" + data.id + ")",
+							})
+						)
+					);
+				}
+			},    
+		});
+	}
+
+	$(document).ready(function() {
+		// Get all posts
+		$.ajax({
+			type: "GET",
+			url: "http://localhost:3333/api/posts",
+			dataType : "json",
+			success: function(data) {
+				$.each(data, function( index, value ) {
+					$("#main-col").append(
+						$('<div/>', {'class': 'overflow-hidden mt-5', 'id': 'date' + index}).append(
+							$('<div/>', {'class': ''}).append(
+								$('<h5/>', {'class': '', text: value.title})
+							).append(
+								$('<p/>', {text: value.content})
+							)
+						)
+					);
+					if ('userId' in value) {
+						$.ajax({
+							type: "GET",
+							url: "http://localhost:3333/api/users/" + value.userId,
+							dataType : "json",
+							success: function(data) {
+								if (data != null) {
+									$("#date" + index).prepend(
+										$('<h6/>',{text: data.name + " (" + data.username + ")"})
+									)
+								}
+							},
+						});
+					}
+				});
+			},
+		});
+		$.ajax({
+			// Get all users for the
+			type: "GET",
+			url: "http://localhost:3333/api/users",
+			dataType : "json",
+			success: function(data) {
+				var users = new Map();
+				// add all users from userdata
+				$.each(data, function( index, value ) { users.set(value.id, value.name);});
+								
+				$("#side-col").append(
+					$("<select/>", {'class': 'form-select', 'id': 'select-user'})
+				).append(
+					$("<div/>", {'id': 'user-data'})
+				)
+				$('#select-user').on("change", getUser)
+				$('#select-user').append(
+					$("<option/>", {'value': '', text: 'Select a user', 'selected': 'selected'}).attr("disabled", true)
+				);
+				
+				users.forEach((value, key) => $('#select-user').append(
+					$("<option/>", {'value': key, 'text': value})
+				));
+			}
+		});
+	});
+	</script>
+  </body>
+</html>
