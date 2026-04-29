@@ -1,0 +1,42 @@
+/* ===========================
+   COLOUR PALETTE
+   =========================== */
+
+:root {
+  --primary-color: #6f8f72; 
+  --light-primary-color: #a9b79c;
+  --dark-primary-color: #3f5b46;
+  --accent-color: #c97a5a;
+  --success-color: #27ae60;
+  --warning-color: #f39c12;
+  --danger-color: #e74c3c;
+  --light-bg: #f6f1e8;
+  --dark-bg: #e9dfd0;
+  --text-color: #2F2A24;
+  --light-text: #6E6A64;
+}
+
+/* ===========================
+   FONTS
+   =========================== */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Open+Sans:wght@400;600;700&display=swap');
+
+:root {
+  --font-main: 'Geist', sans-serif;         
+  --font-heading: 'Open Sans', sans-serif; /*update*/
+  --font-size-base: 16px;
+  --font-size-small: 14px;
+  --font-size-large: 20px;
+  --font-size-heading: 32px;
+  --line-height-base: 1.6;
+  --line-height-heading: 1.2;
+}
+
+/* ===========================
+   LAYOUT
+   =========================== */
+
+.navbar {
+  background-color: var(--dark-primary-color);
+  color: var(--light-background-color);
+}
