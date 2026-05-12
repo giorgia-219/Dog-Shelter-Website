@@ -38,5 +38,10 @@
 
 .navbar {
   background-color: var(--dark-primary-color);
-  color: var(--light-background-color);
+  color: var(--light-bg);
+}
+
+footer {
+  background-color: var(--dark-primary-color);
+  color: var(--light-bg);
 }
