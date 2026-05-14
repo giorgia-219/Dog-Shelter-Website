@@ -17,19 +17,88 @@
 }
 
 /* ===========================
-   FONTS
+    TEXT STYLES
    =========================== */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Open+Sans:wght@400;600;700&display=swap');
 
 :root {
-  --font-main: 'Geist', sans-serif;         
-  --font-heading: 'Open Sans', sans-serif; /*update*/
-  --font-size-base: 16px;
-  --font-size-small: 14px;
-  --font-size-large: 20px;
-  --font-size-heading: 32px;
-  --line-height-base: 1.6;
-  --line-height-heading: 1.2;
+--font-main: 'Roboto', sans-serif;
+--font-heading: 'Open Sans', sans-serif;
+--font-size-base: 16px;
+--font-size-small: 14px;
+--font-size-large: 20px;
+--font-size-heading: 32px;
+--line-height-base: 1.6;
+--line-height-heading: 1.2;
+}
+
+body {
+  font-family: var(--font-main);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-base);
+  color: var(--text-color);
+  background-color: var(--light-bg);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  line-height: var(--line-height-heading);
+  color: var(--primary-color);
+  margin-bottom: var(--spacing-md);
+}
+
+h1 {
+  font-size: var(--font-size-heading);
+}
+
+h2 {
+  font-size: var(--font-size-heading - 4px);
+}
+
+h3 {
+  font-size: var(--font-size-heading - 8px);
+}
+
+h4 {
+  font-size: var(--font-size-heading - 12px);
+}
+
+p {
+  margin-bottom: var(--spacing-md);
+  color: var(--text-color);
+}
+
+label {
+  font-weight: 500;
+  margin-bottom: 6px;
+  color: var(--dark-primary-color);
+}
+
+.section-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--dark-primary-color);
+  margin-top: 35px;
+  margin-bottom: 15px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid rgba(111, 143, 114, 0.25);
+}
+
+body {
+  background: linear-gradient(180deg, var(--light-bg), #ffffff);
+}
+
+/* ===========================
+    SPACING
+   =========================== */
+
+:root {
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  --spacing-xxl: 48px;
 }
 
 /* ===========================
@@ -45,3 +114,42 @@ footer {
   background-color: var(--dark-primary-color);
   color: var(--light-bg);
 }
+
+/* just for the contact us page, tidy up!! */
+
+.form-container {
+  background: var(--light-bg);
+  border-radius: 18px;
+  padding: 40px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+.form-section {
+  margin-bottom: 40px;
+  padding-bottom: 25px;
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+}
+
+.form-check {
+  padding: 6px 0;
+}
+
+.form-check-input:checked {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+button.btn {
+  background-color: var(--primary-color);
+  border: none;
+  border-radius: 12px;
+  padding: 12px 20px;
+  font-weight: 600;
+  transition: 0.2s ease;
+}
+
+button.btn:hover {
+  background-color: var(--dark-primary-color);
+  transform: translateY(-1px);
+}
+

@@ -1,3 +1,10 @@
+<!-- FORM TODO:
+	reduce spacing, add two columns on desktop
+	AFTER setting up the database: ask for dogs they're interested in (from the database)
+
+	add footer
+	-->
+
 <!doctype html>
 <html lang="en">
 	<head>
@@ -14,54 +21,294 @@
 		<title>Canile Sante Marie</title>
 	</head>
 	<body class="vh-100">
+		<header>
+			<nav class="navbar navbar-expand-lg navbar-dark">
+				<div class="container-fluid">
 
-		<nav class="navbar navbar-expand-lg navbar-dark">
-			<div class="container-fluid">
+					<a class="navbar-brand" href="index.html">
+						<img src="img/logo_light.svg" width="50" height="50" class="me-2"> Canile Sante Marie</a>
 
-				<a class="navbar-brand" href="index.html">
-					<img src="img/logo_light.svg" width="50" height="50" class="me-2"> Canile Sante Marie</a>
+					<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+						<span class="navbar-toggler-icon"></span>
+					</button>
 
-				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-					<span class="navbar-toggler-icon"></span>
-				</button>
+					<div class="collapse navbar-collapse" id="navbarSupportedContent">
+						<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+							<li class="nav-item">
+								<a class="nav-link" href="adopt.html">Adopt</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="location.html">Visit Us</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link active" href="#">Contact Us</a>
+							</li>
+						</ul>
 
-				<div class="collapse navbar-collapse" id="navbarSupportedContent">
-					<ul class="navbar-nav me-auto mb-2 mb-lg-0">
-						<li class="nav-item">
-							<a class="nav-link" href="adopt.html">Adopt</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="location.html">Visit Us</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link active" href="#">Contact Us</a>
-						</li>
-					</ul>
+						<ul class="navbar-nav">
+							<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+							<img src="img/flag_uk.svg" width="22" height="22" alt="English">
+							</a>
 
-					<ul class="navbar-nav">
-						<li class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-						<img src="img/flag_uk.svg" width="22" height="22" alt="English">
-						</a>
+							<ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+							<li>
+								<a class="dropdown-item" href="?lang=en"><img src="img/flag_uk.svg" width="22" height="22" class="me-2" alt="English">English</a>
+							</li>
+							<li><hr class="dropdown-divider" /></li>
+							<li>
+								<a class="dropdown-item" href="?lang=it"><img src="img/flag_italy.svg" width="22" height="22" class="me-2" alt="Italiano">Italiano</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</nav>
+		</header>
+		<main>
+			<div class="container">
+				<div class="form-container">
+				<h1>Inquiry Form</h1>
+				<p class="text-muted"> Help us understand your lifestyle and preferences to find the right dog for you. </p>
 
-						<ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-						<li>
-							<a class="dropdown-item" href="?lang=en"><img src="img/flag_uk.svg" width="22" height="22" class="me-2" alt="English">English</a>
-						</li>
-						<li><hr class="dropdown-divider" /></li>
-						<li>
-							<a class="dropdown-item" href="?lang=it"><img src="img/flag_italy.svg" width="22" height="22" class="me-2" alt="Italiano">Italiano</a>
-						</li>
-					</ul>
+				<form>
+					<div class="section-title">About You</div>
+						<div class="row mb-4">
+							<div class="col-md-6 mb-2">
+								<input type="text" class="form-control" placeholder="First Name">
+							</div>
+
+							<div class="col-md-6 mb-2">
+								<input type="text" class="form-control" placeholder="Last Name">
+							</div>
+						</div>
+						<div class="mb-4">
+							<input type="email" class="form-control" placeholder="Email Address">
+						</div>
+
+					<div class="mb-4">
+						<label class="form-label"> Are you a first time pet owner? </label>
+
+						<div class="radio-group">
+							<div class="form-check">
+							<input class="form-check-input" type="radio" name="firstTimeOwner" id="ownerYes">
+							<label class="form-check-label" for="ownerYes"> Yes </label>
+							</div>
+
+							<div class="form-check">
+							<input class="form-check-input" type="radio" name="firstTimeOwner" id="ownerNo">
+							<label class="form-check-label" for="ownerNo"> No </label>
+							</div>
+						</div>
+					</div>
+					
+
+					<div class="mb-4">
+					<label class="form-label"> Do you currently have pets? </label>
+
+						<div class="radio-group">
+							<div class="form-check">
+							<input class="form-check-input" type="radio" name="currentPets" id="petsYes">
+							<label class="form-check-label" for="petsYes"> Yes </label>
+							</div>
+
+							<div class="form-check">
+							<input class="form-check-input" type="radio" name="currentPets" id="petsNo">
+							<label class="form-check-label" for="petsNo"> No </label>
+							</div>
+						</div>
+
+					</div>
+
+					<!-- <div class="mb-4"> -->
+					<label class="form-label"> Which pets have you had before? </label>
+
+					<div class="checkbox-group">
+						<div class="form-check">
+						<input class="form-check-input" type="checkbox" id="prevDog">
+						<label class="form-check-label" for="prevDog">Dog</label>
+						</div>
+						<div class="form-check">
+						<input class="form-check-input" type="checkbox" id="prevCat">
+						<label class="form-check-label" for="prevCat">Cat</label>
+						</div>
+						<div class="form-check">
+						<input class="form-check-input" type="checkbox" id="prevBird">
+						<label class="form-check-label" for="prevBird">Bird</label>
+						</div>
+						<div class="form-check">
+						<input class="form-check-input" type="checkbox" id="prevRodent">
+						<label class="form-check-label" for="prevRodent">Rodent</label>
+						</div>
+						<div class="form-check">
+						<input class="form-check-input" type="checkbox" id="prevFish">
+						<label class="form-check-label" for="prevFish">Fish</label>
+						</div>
+						<div class="form-check">
+						<input class="form-check-input" type="checkbox" id="prevReptile">
+						<label class="form-check-label" for="prevReptile">Reptile</label>
+						</div>
+						<div class="form-check">
+						<input class="form-check-input" type="checkbox" id="prevOther">
+						<label class="form-check-label" for="prevOther">Other</label>
+						</div>
+
+					</div>
+
+
+					<!-- Current pets -->
+					<div class="mb-4">
+					<label class="form-label"> Which pets do you currently have? </label>
+					<div class="checkbox-group">
+						<div class="form-check">
+						<input class="form-check-input" type="checkbox" id="currDog">
+						<label class="form-check-label" for="currDog">Dog</label>
+						</div>
+						<div class="form-check">
+						<input class="form-check-input" type="checkbox" id="currCat">
+						<label class="form-check-label" for="currCat">Cat</label>
+						</div>
+						<div class="form-check">
+						<input class="form-check-input" type="checkbox" id="currBird">
+						<label class="form-check-label" for="currBird">Bird</label>
+						</div>
+						<div class="form-check">
+						<input class="form-check-input" type="checkbox" id="currRodent">
+						<label class="form-check-label" for="currRodent">Rodent</label>
+						</div>
+						<div class="form-check">
+						<input class="form-check-input" type="checkbox" id="currFish">
+						<label class="form-check-label" for="currFish">Fish</label>
+						</div>
+						<div class="form-check">
+						<input class="form-check-input" type="checkbox" id="currReptile">
+						<label class="form-check-label" for="currReptile">Reptile</label>
+						</div>
+						<div class="form-check">
+						<input class="form-check-input" type="checkbox" id="currOther">
+						<label class="form-check-label" for="currOther">Other</label>
+						</div>
+					</div>
+
+					</div>
+
+					<!-- Dog details -->
+					<div class="section-title">Current Dog Information</div> <!-- TODO: only show if user has a dog -->
+					<div class="row g-3">
+						<div class="col-md-4">
+							<label class="form-label">Breed</label>
+							<input type="text" class="form-control">
+						</div>
+
+						<div class="col-md-4">
+							<label class="form-label">Age</label>
+							<input type="number" class="form-control" min="0">
+						</div>
+
+						<div class="col-md-4">
+							<label class="form-label">Gender</label>
+							<select class="form-select">
+							<option selected disabled>Select</option>
+							<option>Male</option>
+							<option>Female</option>
+							</select>
+						</div>
+
+						<div class="col-md-6">
+							<label class="form-label"> Is the dog sterilized? </label>
+							<select class="form-select">
+							<option selected disabled>Select</option>
+							<option>Yes</option>
+							<option>No</option>
+							</select>
+						</div>
+
+					</div>
+
+					<!-- IDEAL DOG -->
+					<div class="section-title">Your Ideal Dog</div>
+
+					<div class="mb-4">
+						<label class="form-label">Preferred Age</label>
+						<select class="form-select">
+							<option selected disabled>Select age range</option>
+							<option>Puppy (&lt; 1 year)</option>
+							<option>Young (1 - 3 years)</option>
+							<option>Adult (3 - 8 years)</option>
+							<option>Senior (&gt; 8 years)</option>
+						</select>
+
+					</div>
+
+					<div class="mb-4">
+						<label class="form-label">Preferred Gender</label>
+						<select class="form-select">
+							<option selected disabled>Select</option>
+							<option>Male</option>
+							<option>Female</option>
+							<option>No preference</option>
+						</select>
+					</div>
+
+					<div class="mb-4">
+						<label class="form-label">Preferred Size</label>
+						<select class="form-select">
+							<option selected disabled>Select size</option>
+							<option>Small (&lt; 10kg)</option>
+							<option>Medium (10 - 20kg)</option>
+							<option>Large (20 - 30kg)</option>
+							<option>XL (&gt; 30kg)</option>
+						</select>
+					</div>
+
+					<div class="mb-4">
+						<label class="form-label">Preferred Activity Level</label>
+						<select class="form-select">
+							<option selected disabled>Select activity level</option>
+							<option>Very Active</option>
+							<option>Active</option>
+							<option>Laid Back</option>
+							<option>Lap Dog</option>
+						</select>
+
+					</div>
+
+					<!-- LIFESTYLE -->
+					<div class="section-title">Dog Lifestyle</div>
+
+					<div class="mb-4">
+					<label class="form-label"> Where will the dog live? </label>
+						<div class="checkbox-group">
+							<div class="form-check">
+							<input class="form-check-input" type="checkbox" id="indoor">
+							<label class="form-check-label" for="indoor"> Indoor </label>
+							</div>
+							<div class="form-check">
+							<input class="form-check-input" type="checkbox" id="outdoor">
+							<label class="form-check-label" for="outdoor"> Outdoor </label>
+							</div>
+						</div>
+					</div>
+
+					<div class="mb-4">
+						<label class="form-label"> Who will regularly interact with the dog? </label>
+						<textarea class="form-control" placeholder="Children, elderly people etc."></textarea>
+					</div>
+
+					<div class="mb-4">
+						<label class="form-label"> Are you interested in training your future dog? </label>
+						<textarea class="form-control" rows="4" placeholder="Puppy class, obedience, agility, etc."></textarea>
+					</div>
+
+					<button type="submit" class="btn btn-dark submit-btn"> Submit </button>
+
+				</form>
 				</div>
 			</div>
-		</nav>
+		</main>
 
-	<div class="container mt-3 h-75">
-		<div class="row h-100">
-				<h1>Canile Sante Marie</h1>
-		</div>
-	</div>
+		<script src="script.js"></script>
+	</body>
 
+</html>
 	<!-- Option 1: Bootstrap Bundle with Popper -->
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+	<!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script> -->
