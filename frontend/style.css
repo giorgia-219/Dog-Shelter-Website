@@ -85,7 +85,7 @@ label {
 }
 
 body {
-  background: linear-gradient(180deg, var(--light-bg), #ffffff);
+  background: linear-gradient(180deg, var(--light-bg), var(--dark-bg));
 }
 
 /* ===========================
