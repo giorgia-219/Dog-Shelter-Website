@@ -1,0 +1,48 @@
+{
+	"products": [
+		{
+			"id": "1",
+			"name": "Apples",
+			"hasQuantity": "100",
+			"price": "3.10"
+		},
+		{
+			"id": "2",
+			"name": "Pears",
+			"hasQuantity": "50",
+			"price": "2.50"
+		},
+		{
+			"id": "3",
+			"name": "Bananas",
+			"hasQuantity": "100",
+			"price": "2.01"
+		},
+		{
+			"id": "4",
+			"name": "Tangerines",
+			"hasQuantity": "150",
+			"price": "3.41"
+		},
+		{
+			"id": "5",
+			"name": "Plums",
+			"hasQuantity": "50",
+			"price": "4.11"
+		},
+		{
+			"id": "6",
+			"name": "Straberries",
+			"hasQuantity": "50",
+			"price": "3.07"
+		}
+		,
+		{
+			"id": "7",
+			"name": "Watermelon",
+			"hasQuantity": "20",
+			"price": "2.19"
+		}
+		
+	]
+}

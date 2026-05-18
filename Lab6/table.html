@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="WIE Assigment for Lab5">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<title>Table with Ajax</title>
+
+<!-- Bootstrap core CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+
+</head>
+<body>
+	<div class="container">
+		<h1>Products</h1>
+		<!-- TODO: add bootstrap table with ID, Name, Anzahl, Preis​ -->
+
+		<table class="table" id="table">
+			<thead>
+				<tr>
+				<th scope="col">#</th>
+				<th scope="col">Name</th>
+				<th scope="col">Quantity</th>
+				<th scope="col">Price</th>
+				</tr>
+			</thead>
+			<!--
+				<tr>
+				<th scope="row">1</th>
+				<td>Mark</td>
+				<td>Otto</td>
+				<td>@mdo</td>
+				</tr>
+				<tr>
+				<th scope="row">2</th>
+				<td>Jacob</td>
+				<td>Thornton</td>
+				<td>@fat</td>
+				</tr>
+				<tr>
+				<th scope="row">3</th>
+				<td colspan="2">Larry the Bird</td>
+				<td>@twitter</td>
+				</tr> -->
+		</table>
+
+
+			
+		<div id="demo">
+			<!-- TODO: add 2 buttons for load data and clear table -->
+			 	<button type="button" class="btn btn-primary" onclick="loadDoc()">Load Data</button>
+				<button type="button" class="btn btn-secondary" onclick="clearTable()">Clear Table</button>
+		</div>
+		<script>
+			function loadDoc() {
+				// TODO: implement load data function
+
+				var xhttp = new XMLHttpRequest();
+				xhttp.onreadystatechange = function () {
+					if (this.readyState == 4) {
+						const data = xhttp.responseText	
+						table = document.getElementById("table");
+						if (table.childNodes.length < 6) {
+							json = this.response;
+							obj = JSON.parse(json);
+							var tbody = document.createElement("tbody");
+							tbody.setAttribute("id", "tbody")
+							table.appendChild(tbody);
+							var i;
+							for (i = 0; i < obj.products.length; i++) {
+								row = obj.products[i];
+								var tr = document.createElement("tr")
+								var td = document.createElement("td");
+								td.textContent = row.id;
+								tr.appendChild(td);
+								var td = document.createElement("td");
+								td.textContent = row.name;
+								tr.appendChild(td);
+								var td = document.createElement("td");
+								td.textContent = row.hasQuantity;
+								tr.appendChild(td);
+								var td = document.createElement("td");
+								td.textContent = row.price;
+								tr.appendChild(td);
+								tbody.appendChild(tr);
+							}
+						}
+					}
+				};
+				xhttp.open("GET", "http://localhost:8080/products.json", true);
+				xhttp.send();
+
+			}
+	
+			
+			function clearTable() {
+				// TODO: implement clear table function
+				tbody = document.getElementById("tbody")
+				tbody.remove()
+			}
+		</script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+</body>
+</html>
