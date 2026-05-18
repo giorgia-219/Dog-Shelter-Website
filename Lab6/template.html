@@ -38,9 +38,13 @@
 		<div class="row h-100">
 			<div id="main-col" class="col-md-8">
 				<h1>Wetterinformation und Vorhersage</h1>
+				<!-- TODO 1. (Deactivated) error banner -->
+				<div id="error-banner-main" class="alert alert-danger mt-3 d-none" role="alert">Webservice is currently not available.</div>
 			</div>
 			<div id="side-col" class="col-md-4 bg-light">
 				<h2>Auswahl Wetterstation</h2>
+				<div id="error-banner-side" class="alert alert-danger mt-3 d-none" role="alert">Webservice is currently not available.</div>
+
 			</div>
 		</div>
 	</div>
@@ -55,13 +59,12 @@
 			type: "GET",
 			url: "https://tourism.api.opendatahub.bz.it/v1/Weather?language=de&extended=true&locfilter=" + this.value,
 			dataType : "json",
-			// TODO 2: Fehlermeldung falls einer der Webservices nicht erreichbar ist
 			success: function(data) {
 				if (data != null) {
 					$('#station-data').html("");
 					$.each(data.Stationdata, function( index, value ) {
 						var curDate = new Date(value.date);
-						var curDateStr = curDate.getDate() + "." + curDate.getMonth() + "." + curDate.getFullYear();
+						var curDateStr = curDate.getDate() + "." + (curDate.getMonth() + 1) + "." + curDate.getFullYear(); // month is 0-indexed
 						$('#station-data').append(
 							$('<div/>', {'class': 'pt-3'}).append(
 								$('<h5/>',{text: curDateStr})
@@ -73,6 +76,11 @@
 						);
 					});
 				}
+			},
+		
+			// TODO 2. Fehlermeldung falls einer der Webservices nicht erreichbar ist
+			error: function() {
+			$("#error-banner-side").removeClass("d-none");
 			}
 		});
 	}
@@ -82,11 +90,10 @@
 			type: "GET",
 			url: "https://tourism.api.opendatahub.bz.it/v1/Weather?language=de&extended=true",
 			dataType : "json",
-			// TODO 2: Fehlermeldung falls einer der Webservices nicht erreichbar ist
 			success: function(data) {
 				$.each(data.Conditions, function( index, value ) {
 					var curDate = new Date(value.date);
-					var curDateStr = curDate.getDate() + "." + curDate.getMonth() + "." + curDate.getFullYear();
+					var curDateStr = curDate.getDate() + "." + (curDate.getMonth() + 1) + "." + curDate.getFullYear(); // month is 0-indexed
 					$("#main-col").append(
 						$('<div/>', {'class': 'overflow-hidden mt-5', 'id': 'date' + index}).append(
 							$('<div/>', {'class': ''}).append(
@@ -110,6 +117,30 @@
 				});
 				
 				// TODO 1: Temperatur-Vorhersagen für die kommenden Tage anzeigen (data.Forecast)
+
+				$.each(data.Forecast, function(index, value) {
+					// console.log(data.Forecast); 
+					var forecastDate = new Date(value.Date);
+					var forecastDateStr = forecastDate.getDate() + "." + (forecastDate.getMonth() + 1) + "." + forecastDate.getFullYear();
+					$("#main-col").append(
+						$('<div/>', {'class': 'overflow-hidden mt-5', 'id': 'date' + index}).append(
+							$('<div/>', {'class': ''}).append(
+								$('<h5/>', {'class': '', text: forecastDateStr + ": " + value.WeatherDesc})
+							).append(
+								$('<p/>', {text: "Min Temperaturen " + value.TempMinmin + "°C bis " + value.TempMinmax + "°C"})
+							).append(
+								$('<p/>', {text: "Max Temperaturen " + value.TempMaxmin + "°C bis " + value.TempMaxmax + "°C"})
+							)
+						)
+					);
+					if ('WeatherImgurl' in value) {
+						$("#date" + index).prepend(
+							$('<img/>', {'class': 'float-start d-none d-lg-block', 'src': value.WeatherImgUrl}).css(
+								'max-width', '350px'
+							)
+						);
+					}
+				});
 				
 				// Station data for select in side bar
 				var stations = new Map();
@@ -128,9 +159,15 @@
 				stations.forEach((value, key) => $('#select-station').append(
 					$("<option/>", {'value': key, 'text': value})
 				));
+			},
+		
+			// TODO 2. Fehlermeldung falls einer der Webservices nicht erreichbar ist
+			error: function() {
+			$("#error-banner-main").removeClass("d-none");
 			}
 		});
-	});
+
+});
 	</script>
   </body>
 </html>
