@@ -89,109 +89,112 @@
 							<input type="email" class="form-control" placeholder="Email Address">
 						</div>
 
-					<div class="mb-4">
-						<label class="form-label"> Are you a first time pet owner? </label>
+					<div class="row mb-4">
+						<div class="col mb-4">
+							<label class="form-label"> Are you a first time pet owner? </label>
 
-						<div class="radio-group">
-							<div class="form-check">
-							<input class="form-check-input" type="radio" name="firstTimeOwner" id="ownerYes">
-							<label class="form-check-label" for="ownerYes"> Yes </label>
-							</div>
+							<div class="radio-group">
+								<div class="form-check">
+								<input class="form-check-input" type="radio" name="firstTimeOwner" id="ownerYes">
+								<label class="form-check-label" for="ownerYes"> Yes </label>
+								</div>
 
-							<div class="form-check">
-							<input class="form-check-input" type="radio" name="firstTimeOwner" id="ownerNo">
-							<label class="form-check-label" for="ownerNo"> No </label>
+								<div class="form-check">
+								<input class="form-check-input" type="radio" name="firstTimeOwner" id="ownerNo">
+								<label class="form-check-label" for="ownerNo"> No </label>
+								</div>
 							</div>
 						</div>
-					</div>
-					
+						
 
-					<div class="mb-4" id="currOwner" style="display: none;">
-					<label class="form-label"> Do you currently have pets? </label>
+						<div class="col mb-4" id="currOwner" style="display: none;">
+						<label class="form-label"> Do you currently have pets? </label>
 
-						<div class="radio-group">
-							<div class="form-check">
-							<input class="form-check-input" type="radio" name="currentPets" id="petsYes">
-							<label class="form-check-label" for="petsYes"> Yes </label>
+							<div class="radio-group">
+								<div class="form-check">
+								<input class="form-check-input" type="radio" name="currentPets" id="petsYes">
+								<label class="form-check-label" for="petsYes"> Yes </label>
+								</div>
+
+								<div class="form-check">
+								<input class="form-check-input" type="radio" name="currentPets" id="petsNo">
+								<label class="form-check-label" for="petsNo"> No </label>
+								</div>
 							</div>
 
-							<div class="form-check">
-							<input class="form-check-input" type="radio" name="currentPets" id="petsNo">
-							<label class="form-check-label" for="petsNo"> No </label>
-							</div>
-						</div>
-
-					</div>
-
-					<div class="mb-4" id="prevPets" style="display: none;">
-						<label class="form-label"> Which pets have you had before? </label>
-						<div class="checkbox-group">
-							<div class="form-check">
-							<input class="form-check-input" type="checkbox" id="prevDog">
-							<label class="form-check-label" for="prevDog">Dog</label>
-							</div>
-							<div class="form-check">
-							<input class="form-check-input" type="checkbox" id="prevCat">
-							<label class="form-check-label" for="prevCat">Cat</label>
-							</div>
-							<div class="form-check">
-							<input class="form-check-input" type="checkbox" id="prevBird">
-							<label class="form-check-label" for="prevBird">Bird</label>
-							</div>
-							<div class="form-check">
-							<input class="form-check-input" type="checkbox" id="prevRodent">
-							<label class="form-check-label" for="prevRodent">Rodent</label>
-							</div>
-							<div class="form-check">
-							<input class="form-check-input" type="checkbox" id="prevFish">
-							<label class="form-check-label" for="prevFish">Fish</label>
-							</div>
-							<div class="form-check">
-							<input class="form-check-input" type="checkbox" id="prevReptile">
-							<label class="form-check-label" for="prevReptile">Reptile</label>
-							</div>
-							<div class="form-check">
-							<input class="form-check-input" type="checkbox" id="prevOther">
-							<label class="form-check-label" for="prevOther">Other</label>
-							</div>
 						</div>
 					</div>
 
-
-					<!-- Current pets -->
-					<div class="mb-4" id="currPets" style="display: none;">
-						<label class="form-label"> Which pets do you currently have? </label>
-						<div class="checkbox-group">
-							<div class="form-check">
-							<input class="form-check-input" type="checkbox" id="currDog">
-							<label class="form-check-label" for="currDog">Dog</label>
-							</div>
-							<div class="form-check">
-							<input class="form-check-input" type="checkbox" id="currCat">
-							<label class="form-check-label" for="currCat">Cat</label>
-							</div>
-							<div class="form-check">
-							<input class="form-check-input" type="checkbox" id="currBird">
-							<label class="form-check-label" for="currBird">Bird</label>
-							</div>
-							<div class="form-check">
-							<input class="form-check-input" type="checkbox" id="currRodent">
-							<label class="form-check-label" for="currRodent">Rodent</label>
-							</div>
-							<div class="form-check">
-							<input class="form-check-input" type="checkbox" id="currFish">
-							<label class="form-check-label" for="currFish">Fish</label>
-							</div>
-							<div class="form-check">
-							<input class="form-check-input" type="checkbox" id="currReptile">
-							<label class="form-check-label" for="currReptile">Reptile</label>
-							</div>
-							<div class="form-check">
-							<input class="form-check-input" type="checkbox" id="currOther">
-							<label class="form-check-label" for="currOther">Other</label>
+					<div class="row mb-4">
+						<div class="col mb-4" id="prevPets" style="display: none;">
+							<label class="form-label"> Which pets have you had before? </label>
+							<div class="checkbox-group">
+								<div class="form-check">
+								<input class="form-check-input" type="checkbox" id="prevDog">
+								<label class="form-check-label" for="prevDog">Dog</label>
+								</div>
+								<div class="form-check">
+								<input class="form-check-input" type="checkbox" id="prevCat">
+								<label class="form-check-label" for="prevCat">Cat</label>
+								</div>
+								<div class="form-check">
+								<input class="form-check-input" type="checkbox" id="prevBird">
+								<label class="form-check-label" for="prevBird">Bird</label>
+								</div>
+								<div class="form-check">
+								<input class="form-check-input" type="checkbox" id="prevRodent">
+								<label class="form-check-label" for="prevRodent">Rodent</label>
+								</div>
+								<div class="form-check">
+								<input class="form-check-input" type="checkbox" id="prevFish">
+								<label class="form-check-label" for="prevFish">Fish</label>
+								</div>
+								<div class="form-check">
+								<input class="form-check-input" type="checkbox" id="prevReptile">
+								<label class="form-check-label" for="prevReptile">Reptile</label>
+								</div>
+								<div class="form-check">
+								<input class="form-check-input" type="checkbox" id="prevOther">
+								<label class="form-check-label" for="prevOther">Other</label>
+								</div>
 							</div>
 						</div>
-					</div>
+
+
+						<!-- Current pets -->
+						<div class="col mb-4" id="currPets" style="display: none;">
+							<label class="form-label"> Which pets do you currently have? </label>
+							<div class="checkbox-group">
+								<div class="form-check">
+								<input class="form-check-input" type="checkbox" id="currDog">
+								<label class="form-check-label" for="currDog">Dog</label>
+								</div>
+								<div class="form-check">
+								<input class="form-check-input" type="checkbox" id="currCat">
+								<label class="form-check-label" for="currCat">Cat</label>
+								</div>
+								<div class="form-check">
+								<input class="form-check-input" type="checkbox" id="currBird">
+								<label class="form-check-label" for="currBird">Bird</label>
+								</div>
+								<div class="form-check">
+								<input class="form-check-input" type="checkbox" id="currRodent">
+								<label class="form-check-label" for="currRodent">Rodent</label>
+								</div>
+								<div class="form-check">
+								<input class="form-check-input" type="checkbox" id="currFish">
+								<label class="form-check-label" for="currFish">Fish</label>
+								</div>
+								<div class="form-check">
+								<input class="form-check-input" type="checkbox" id="currReptile">
+								<label class="form-check-label" for="currReptile">Reptile</label>
+								</div>
+								<div class="form-check">
+								<input class="form-check-input" type="checkbox" id="currOther">
+								<label class="form-check-label" for="currOther">Other</label>
+								</div>
+							</div>
+						</div>
 
 					<!-- Dog details -->
 					<div id="dogDetailsSection" style="display: none;">
