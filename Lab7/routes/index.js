@@ -18,15 +18,20 @@ router.get('/', (req, res, next) => {
 				'<td>' + el['isbn'] + '</td>' + 
 				'<td>' + el['title'] + '</td>' + 
 				'<td>' + el['author'] + '</td>' + 
-				'<td><a href="/book?isbn=' + el['isbn'] + '">Detail</a></td>' + 
+				'<td>' + '<a href="/book?isbn=' + el['isbn'] + '">Detail</a> | ' + 
+                    '<a href="/book/delete?isbn=' + el['isbn'] + '" style="color: red;">Delete</a>' + '</td>' +
 				'</tr>'
-		);
+			);
 		page = page.replace('{%table%}', table_html)
 		
+		const createLinkHtml = '<p><a href="/book/create">+ Neues Buch hinzufügen</a></p></body>';
+        page = page.replace('</body>', createLinkHtml);
+
 		res.setHeader('Content-Type', 'text/html')
 		res.write(page)
 		res.end();
 	});
 })
+
 
 module.exports = router; 

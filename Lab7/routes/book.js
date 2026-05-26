@@ -9,8 +9,7 @@ const fs = require('fs')
 router.get('/', (req, res, next) => {
 	console.log(req.query);
 	
-	if ('isbn' in req.query 
-				&& req.app.locals.books.find(b => b.isbn === req.query.isbn) !== undefined) {
+	if ('isbn' in req.query && req.app.locals.books.find(b => b.isbn === req.query.isbn) !== undefined) {
 		
 		let curbook = req.app.locals.books.find(function (b) {return b.isbn === req.query.isbn});
 
@@ -30,10 +29,12 @@ router.get('/', (req, res, next) => {
 			res.end();
 		});
 	} else {
-		res.status(404).sendFile(path.join(__dirname, '..', 'views', '404.html'))
+		next();
+		// res.status(404).sendFile(path.join(__dirname, '..', 'views', '404.html'))
 	}
 
 })
+
 
 // Task 1. show the form
 router.get('/create', (req, res, next) => {
@@ -41,9 +42,6 @@ router.get('/create', (req, res, next) => {
 });
 
 router.post('/add', (req, res, next) => {
-
-	console.log('BODY:', req.body);
-
     const newBook = {
         isbn: req.body.isbn,
         title: req.body.title,
@@ -51,10 +49,25 @@ router.post('/add', (req, res, next) => {
         description: req.body.description
     };
     req.app.locals.books.push(newBook);
-
-	console.log('BOOKS:', req.app.locals.books);
-
     res.redirect('/');
 });
+
+
+// Task 3. delete book
+router.get('/delete', (req, res, next) => {
+    const targetIsbn = req.query.isbn;
+
+    const bookIndex = req.app.locals.books.findIndex(b => b.isbn === targetIsbn);
+
+    if (bookIndex !== -1) {
+        req.app.locals.books.splice(bookIndex, 1);
+        
+        console.log(`Deleted book with ISBN: ${targetIsbn}`);
+        res.redirect('http://localhost:3000/');
+    } else {
+        res.status(404).send('<h1>Book not found</h1>');
+    }
+});
+
 
 module.exports = router; 
