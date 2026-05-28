@@ -14,8 +14,8 @@ const sequelize = new Sequelize({
 });
 
 const modelDefiners = [
-	require('./models/user.model'),
-	require('./models/post.model'),
+	require('./models/dogs.model'),
+	require('./models/inquiries.model'),
 	// Add more models here...
 	// require('./models/item'),
 ];

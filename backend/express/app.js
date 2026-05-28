@@ -3,8 +3,8 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 
 const routes = {
-	users: require('./routes/users'),
-	posts: require('./routes/posts'),
+	dogs: require('./routes/dogs'),
+	inquiries: require('./routes/inquiries'),
 	// Add more routes here...
 	// items: require('./routes/items'),
 };
