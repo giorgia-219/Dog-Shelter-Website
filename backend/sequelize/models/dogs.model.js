@@ -3,7 +3,7 @@ const { DataTypes } = require("sequelize");
 
 // This function will automatically receive as parameter the Sequelize connection object.
 module.exports = (sequelize) => {
-	sequelize.define('post', {
+	sequelize.define('dogs', {
 		// The following specification of the 'id' attribute could be omitted
 		// since it is the default.
 		id: {
