@@ -18,15 +18,14 @@ async function getById(req, res) {
 	}
 };
 
-// Add a new item
 async function create(req, res) {
-	if (req.body.id) {
-		res.status(400).send(`Bad request: ID should not be provided, since it is determined automatically by the database.`)
-	} else {
-		await models.inquiries.create(req.body);
-		res.status(201).send('""');
-	}
-};
+    try {
+        const newInquiry = await models.inquiry.create(req.body);
+        res.status(201).json({ success: true, message: "Inquiry submitted!", data: newInquiry });
+    } catch (error) {
+        res.status(400).json({ success: false, message: error.message });
+    }
+}
 
 // Update an item
 async function update(req, res) {

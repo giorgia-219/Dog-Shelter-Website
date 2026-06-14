@@ -36,6 +36,52 @@ function renderDogs(dogsArray) {
 
 loadDogs();
 
+// INQUIRY FORM
+
+const form = document.getElementById('adoption-form');
+
+if (form) {
+    form.addEventListener('submit', async (event) => {
+        event.preventDefault(); // Stop standard page reload
+        
+        // Form Validation Check
+        if (!form.checkValidity()) {
+            form.classList.add('was-validated'); // Bootstrap visual feedback
+            return;
+        }
+
+        // Gather all data cleanly into a plain JavaScript Object
+        const formData = {
+            firstName: document.getElementById('firstName').value,
+            lastName: document.getElementById('lastName').value,
+            email: document.getElementById('email').value,
+            isFirstTimeOwner: document.getElementById('ownerYes').checked,
+            preferredAge: form.querySelector('select:nth-of-type(1)').value,
+        };
+
+        try {
+            const response = await fetch('http://localhost:3333/api/inquiries', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(formData)
+            });
+
+            const result = await response.json();
+            if (result.success) {
+                // Smoothly replace the form container with a success message
+                document.querySelector('.form-container').innerHTML = `
+                    <div class="text-center py-5">
+                        <h2 style="color: var(--primary-color);">Grazie, ${formData.firstName}!</h2>
+                        <p class="text-muted">Your inquiry has been successfully received. Our volunteers will get in touch soon.</p>
+                    </div>
+                `;
+            }
+        } catch (error) {
+            console.error("Submission failed:", error);
+        }
+    });
+}
+
 
 // FORM LOGIC on contact-us.html
 

@@ -1,6 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
+const path = require('path');
 
 const routes = {
 	dogs: require('./routes/dogs'),
@@ -16,6 +17,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(cors());
 
+app.use(express.static(path.join(__dirname, '../../frontend')));
+
 // We create a wrapper to workaround async errors not being transmitted correctly.
 function makeHandlerAwareOfAsyncErrors(handler) {
 	return async function(req, res, next) {
@@ -30,7 +33,7 @@ function makeHandlerAwareOfAsyncErrors(handler) {
 // We provide a root route just as an example
 app.get('/', (req, res) => {
 	res.send(`
-		<h2>Hello, WIE 2024/2025!</h2>
+		<h2>Welcome!</h2>
         `);
 });
 

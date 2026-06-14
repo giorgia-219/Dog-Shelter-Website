@@ -74,19 +74,21 @@
 				<h1>Inquiry Form</h1>
 				<p class="text-muted"> Help us understand your lifestyle and preferences to find the right dog for you. </p>
 
-				<form>
+				<form id="adoption-form" class="needs-validation" novalidate>
 					<div class="section-title">About You</div>
 						<div class="row mb-4">
 							<div class="col-md-6 mb-2">
-								<input type="text" class="form-control" placeholder="First Name">
+								<input type="text" class="form-control" id="firstName" placeholder="First Name" required>
+								<div class="invalid-feedback"> Enter your first name </div>
 							</div>
 
 							<div class="col-md-6 mb-2">
-								<input type="text" class="form-control" placeholder="Last Name">
+								<input type="text" class="form-control" id="lastName" placeholder="Last Name" required>
+								<div class="invalid-feedback"> Enter your last name </div>
 							</div>
 						</div>
 						<div class="mb-4">
-							<input type="email" class="form-control" placeholder="Email Address">
+							<input type="email" class="form-control" id="email" placeholder="Email Address" required>
 						</div>
 
 					<div class="row mb-4">
