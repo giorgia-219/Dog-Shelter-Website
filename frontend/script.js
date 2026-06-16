@@ -44,6 +44,23 @@ if (form) {
     form.addEventListener('submit', async (event) => {
         event.preventDefault(); // Stop standard page reload
         
+        // email address input validation + feedback
+        const emailInput = document.getElementById('email');
+        const emailFeedback = document.getElementById('email-feedback');
+        
+        const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+        // give feedback for empty or invalid email address
+        if (emailInput.value.trim() === "") {
+            emailInput.setCustomValidity("Empty");
+            emailFeedback.textContent = "Please provide an email address.";
+        } else if (!emailRegex.test(emailInput.value)) {
+            emailInput.setCustomValidity("Invalid");
+            emailFeedback.textContent = "Please look over your email format (e.g., name@domain.com).";
+        } else {
+            emailInput.setCustomValidity("");
+        }
+
         // Form Validation Check
         if (!form.checkValidity()) {
             form.classList.add('was-validated'); // Bootstrap visual feedback
@@ -68,7 +85,7 @@ if (form) {
 
             const result = await response.json();
             if (result.success) {
-                // Smoothly replace the form container with a success message
+                // Replace the form container with a success message
                 document.querySelector('.form-container').innerHTML = `
                     <div class="text-center py-5">
                         <h2 style="color: var(--primary-color);">Grazie, ${formData.firstName}!</h2>
