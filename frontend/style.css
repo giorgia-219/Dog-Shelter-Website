@@ -131,7 +131,7 @@ footer {
 }
 
 .form-check {
-  padding: 6px 0;
+  padding: 6px 30px;
 }
 
 .form-check-input:checked {
@@ -153,3 +153,14 @@ button.btn:hover {
   transform: translateY(-1px);
 }
 
+/* adopt */
+
+/* Make the cards pop when hovered over */
+.transition-card {
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease;
+}
+
+.transition-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08) !important;
+}
