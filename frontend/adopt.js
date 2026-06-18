@@ -64,7 +64,7 @@ function renderDogs(dogsArray) {
         const dogCard = `
             <div class="col-md-6 col-lg-4">
                 <div class="card h-100 shadow-sm border-0 position-relative transition-card" style="background-color: var(--light-bg); border-radius: 16px; overflow: hidden;">
-                    <img src="${dog.imageUrl || 'img/puppies_shelter.jpg'}" class="card-img-top" alt="${dog.name}" style="object-fit: cover; height: 240px;">
+                <img src="${dog.imageUrl || 'img/puppies_shelter.jpg'}" class="card-img-top" alt="${dog.name}" style="object-fit: cover; height: 240px;">
                     <div class="card-body p-4 d-flex flex-column justify-content-between">
                         <div>
                             <div class="d-flex justify-content-between align-items-center mb-2">
@@ -74,7 +74,7 @@ function renderDogs(dogsArray) {
                                 </span>
                             </div>
                             <div class="d-flex gap-2 text-muted mb-3" style="font-size: 0.85rem;">
-                                <span><i class="bi bi-clock"></i> ${dog.age} ${dog.age === 1 ? 'year' : 'years'} old</span>
+                                <span><i class="bi bi-clock"></i> ${dog.age} </span>
                                 <span>•</span>
                                 <span>Size: ${dog.size} (${dog.weight || 'N/A'})</span>
                             </div>

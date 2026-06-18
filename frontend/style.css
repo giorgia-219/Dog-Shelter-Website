@@ -153,6 +153,58 @@ button.btn:hover {
   transform: translateY(-1px);
 }
 
+/* index.html*/
+/* Custom Hero Alignment rules */
+.fw-extrabold {
+  font-weight: 800;
+}
+
+.style-outline-custom {
+  border: 2px solid var(--primary-color) !important;
+  color: var(--dark-primary-color) !important;
+  transition: all 0.2s ease;
+}
+
+.style-outline-custom:hover {
+  background-color: var(--primary-color) !important;
+  color: #fff !important;
+}
+
+/* Enforce fluid heights for uniform images within carousel */
+.hero-carousel-height {
+  height: 460px;
+}
+
+@media (max-width: 768px) {
+  .hero-carousel-height {
+    height: 320px;
+  }
+}
+
+.style-carousel-img {
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Text readable gradient scrim positioned over bottom images */
+.carousel-caption-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 0.75) 100%);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.carousel-indicators [data-bs-target] {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-left: 6px;
+  margin-right: 6px;
+}
+
 /* adopt */
 
 /* Make the cards pop when hovered over */
