@@ -66,29 +66,17 @@
 			</nav>
 		</header>
 
-		<!-- Page content
 		<main class="flex-grow-1">
-			<section class="container py-4">
-				<div class="row d-flex align-items-center">
-						<img src="img/puppies_shelter.jpg" height="416" width="624">
-						<h1>Find your dog. Change a life.</h1>
-				</div>
-			</section>
-			</main>
-		-->
-
-		<main class="flex-grow-1">
-			<section class="container py-5 my-3">
+			<section class="container py-5">
 				<div class="row align-items-center g-5">
-					
 					<div class="col-lg-5 text-center text-lg-start">
-						<h5> CANILE SANTE MARIE </h5>
+						<h5> Canile Sante Marie </h5>
 						<h1 class="display-4 fw-extrabold mb-3" style="color: var(--dark-primary-color); line-height: 1.15;">
 							Find your dog.<br>Change a life.
 						</h1>
 						<p class="lead text-secondary mb-4" style="font-size: 1.1rem; line-height: 1.6;">
-							Every dog here is waiting for the same thing: a name on the collar and a place to belong. </p>
-						<!-- Dual Action Button Configuration -->
+							Every dog here is waiting for the same thing: a name on the collar and a place to belong.
+						</p>
 						<div class="d-flex flex-column flex-sm-row justify-content-center justify-content-lg-start gap-3">
 							<a href="adopt.html" class="btn btn-dark btn-lg px-4 py-3 fw-semibold shadow-sm" 
 							style="background-color: var(--primary-color); border: none; border-radius: 12px; font-size: 0.95rem;">
@@ -101,71 +89,115 @@
 						</div>
 					</div>
 
-					<!-- Right Column: Auto-playing Interactive Carousel Showcase -->
-					<div class="col-lg-7">
-						<div id="dogHeroCarousel" class="carousel slide carousel-fade shadow-lg" data-bs-ride="carousel" style="border-radius: 24px; overflow: hidden;">
-							
-							<!-- Carousel Navigational Progress Indicators -->
-							<div class="carousel-indicators">
-								<button type="button" data-bs-target="#dogHeroCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-								<button type="button" data-bs-target="#dogHeroCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-								<button type="button" data-bs-target="#dogHeroCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-							</div>
-							
-							<!-- Inside Carousel Canvas Core Items -->
-							<div class="carousel-inner">
-								
-								<!-- Slide 1: Featuring Cesare -->
-								<div class="carousel-item active" data-bs-interval="4000">
-									<div class="position-relative hero-carousel-height">
-										<img src="img/dogImg/cesare.jpg" class="d-block w-100 h-100 style-carousel-img" alt="Cesare">
-										<div class="carousel-caption-overlay d-flex flex-column justify-content-end p-4">
-											<h4 class="text-white mb-1 fw-bold">Cesare</h4>
-											<p class="text-white-50 small mb-0">A gentle giant looking for a calm, loving home</p>
-										</div>
-									</div>
-								</div>
-
-								<!-- Slide 2: Featuring Circe -->
-								<div class="carousel-item" data-bs-interval="4000">
-									<div class="position-relative hero-carousel-height">
-										<img src="img/dogImg/circe.jpg" class="d-block w-100 h-100 style-carousel-img" alt="Circe">
-										<div class="carousel-caption-overlay d-flex flex-column justify-content-end p-4">
-											<h4 class="text-white mb-1 fw-bold">Circe</h4>
-											<p class="text-white-50 small mb-0">Sweet and cuddly, perfect for cozy apartment living</p>
-										</div>
-									</div>
-								</div>
-
-								<!-- Slide 3: Featuring Thor -->
-								<div class="carousel-item" data-bs-interval="4000">
-									<div class="position-relative hero-carousel-height">
-										<img src="img/dogImg/thor.jpg" class="d-block w-100 h-100 style-carousel-img" alt="Thor">
-										<div class="carousel-caption-overlay d-flex flex-column justify-content-end p-4">
-											<h4 class="text-white mb-1 fw-bold">Thor</h4>
-											<p class="text-white-50 small mb-0">Energetic and ready for long hiking adventures</p>
-										</div>
-									</div>
-								</div>
-
-							</div>
-
-							<!-- Left directional control chevron -->
-							<button class="carousel-control-prev" type="button" data-bs-target="#dogHeroCarousel" data-bs-slide="prev">
-								<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-								<span class="visually-hidden">Previous</span>
-							</button>
-							<!-- Right directional control chevron -->
-							<button class="carousel-control-next" type="button" data-bs-target="#dogHeroCarousel" data-bs-slide="next">
-								<span class="carousel-control-next-icon" aria-hidden="true"></span>
-								<span class="visually-hidden">Next</span>
-							</button>
-							
-						</div>
+					<div class="col-lg-7 text-center">
+						<img src="img/puppies_shelter.jpg" height="416" width="624" class="img-fluid hero-fixed-img shadow-lg" alt="Puppies in shelter">
 					</div>
-
 				</div>
 			</section>
+
+			<section class="py-5" style="background-color: rgba(233, 223, 208, 0.3);">
+				<div class="container">
+					<div class="d-flex justify-content-between align-items-end mb-4">
+						<div>
+							<h2 class="fw-bold mb-1" style="color: var(--dark-primary-color);">Meet Our Dogs</h2>
+						</div>
+						<a href="adopt.html" class="btn btn-sm btn-outline-dark px-3 fw-semibold" style="border-radius: 8px;">View All</a>
+					</div>
+
+					<div id="featuredDogsCarousel" class="carousel slide" data-bs-ride="carousel">
+						<div class="carousel-inner">
+							
+							<div class="carousel-item active" data-bs-interval="5000">
+								<div class="row g-4">
+									<div class="col-md-4">
+										<a href="adopt.html" class="text-decoration-none card-carousel-link">
+											<div class="card h-100 shadow-sm border-0 home-dog-card">
+												<img src="img/dogImg/cesare.jpg" class="card-img-top" alt="Cesare">
+												<div class="card-body p-3">
+													<h5 class="fw-bold mb-1 card-dog-name">Cesare</h5>
+													<span class="badge rounded-pill bg-light text-muted px-2 py-1 fs-7">3 Years • Large</span>
+												</div>
+											</div>
+										</a>
+									</div>
+
+									<div class="col-md-4">
+										<a href="adopt.html" class="text-decoration-none card-carousel-link">
+										<div class="card h-100 shadow-sm border-0 home-dog-card">
+											<img src="img/dogImg/circe.jpg" class="card-img-top" alt="Circe">
+											<div class="card-body p-3">
+												<h5 class="fw-bold mb-1 card-dog-name">Circe</h5>
+												<span class="badge rounded-pill bg-light text-muted px-2 py-1 fs-7">2 Years • Small</span>
+											</div>
+										</div>
+									</a>
+								</div>
+								<div class="col-md-4">
+									<a href="adopt.html" class="text-decoration-none card-carousel-link">
+										<div class="card h-100 shadow-sm border-0 home-dog-card">
+											<img src="img/dogImg/thor.jpg" class="card-img-top" alt="Thor">
+											<div class="card-body p-3">
+												<h5 class="fw-bold mb-1 card-dog-name">Thor</h5>
+												<span class="badge rounded-pill bg-light text-muted px-2 py-1 fs-7">4 Years • Medium</span>
+											</div>
+										</div>
+									</a>
+								</div>
+							</div>
+						</div>
+
+						<div class="carousel-item" data-bs-interval="5000">
+							<div class="row g-4">
+								<div class="col-md-4">
+									<a href="adopt.html" class="text-decoration-none card-carousel-link">
+										<div class="card h-100 shadow-sm border-0 home-dog-card">
+											<img src="img/dogImg/ettore.jpg" class="card-img-top" alt="Ettore">
+											<div class="card-body p-3">
+												<h5 class="fw-bold mb-1 card-dog-name">Ettore</h5>
+												<span class="badge rounded-pill bg-light text-muted px-2 py-1 fs-7">5 Years • Medium</span>
+											</div>
+										</div>
+									</a>
+								</div>
+								<div class="col-md-4">
+									<a href="adopt.html" class="text-decoration-none card-carousel-link">
+										<div class="card h-100 shadow-sm border-0 home-dog-card">
+											<img src="img/dogImg/tommy.jpg" class="card-img-top" alt="Tommy">
+											<div class="card-body p-3">
+												<h5 class="fw-bold mb-1 card-dog-name">Tommy</h5>
+												<span class="badge rounded-pill bg-light text-muted px-2 py-1 fs-7">8 Years • Medium</span>
+											</div>
+										</div>
+									</a>
+								</div>
+								<div class="col-md-4">
+									<a href="adopt.html" class="text-decoration-none card-carousel-link">
+										<div class="card h-100 shadow-sm border-0 home-dog-card">
+											<img src="img/dogImg/cesare.jpg" class="card-img-top" alt="Cesare">
+											<div class="card-body p-3">
+												<h5 class="fw-bold mb-1 card-dog-name">Cesare</h5>
+												<span class="badge rounded-pill bg-light text-muted px-2 py-1 fs-7">3 Years • Large</span>
+											</div>
+										</div>
+									</a>
+								</div>
+							</div>
+						</div>
+
+					</div>
+
+					<button class="carousel-control-prev home-carousel-control" type="button" data-bs-target="#featuredDogsCarousel" data-bs-slide="prev">
+						<span class="carousel-control-prev-icon invert-filter" aria-hidden="true"></span>
+						<span class="visually-hidden">Previous</span>
+					</button>
+					<button class="carousel-control-next home-carousel-control" type="button" data-bs-target="#featuredDogsCarousel" data-bs-slide="next">
+						<span class="carousel-control-next-icon invert-filter" aria-hidden="true"></span>
+						<span class="visually-hidden">Next</span>
+					</button>
+				</div>
+			</div>
+		</section>
+
 		</main>
 
 		<!-- Footer -->
@@ -215,116 +247,5 @@
 
 	<!-- jQuery 3.7.1 -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> 
-	<script type="text/javascript">
-	// Add a new sample Post for the user with id
-	function addPost(userId) {
-		$.ajax({
-			type: "POST",
-			url: "http://localhost:3333/api/posts",
-			contentType: "application/json; charset=utf-8",
-			dataType : "json",
-			data: JSON.stringify({
-				"title": "Another Post", 
-				"content": "Lorem ipsum",
-				"userId": userId,
-			}),
-			success: function(data) {
-				alert("success")
-			}, 
-			error: function(data) {
-				alert(data.status + " - " + data.statusText)
-			}   
-		});
-	}
-
-	// Get all users
-	function getUser() {
-		$.ajax({
-			type: "GET",
-			url: "http://localhost:3333/api/users/" + this.value,
-			dataType : "json",
-			success: function(data) {
-				if (data != null) {
-					$('#user-data').html("");
-					$('#user-data').append(
-						$('<div/>', {'class': 'pt-3'}).append(
-							$('<h5/>',{text: data.name + " (" + data.username + ")"})
-						).append(
-							$('<p/>',{text: data.email})
-						).append(
-							$('<input/>').attr({
-								type: "button",
-								id: "field",
-								value: "Add Post",
-								onclick: "addPost(" + data.id + ")",
-							})
-						)
-					);
-				}
-			},    
-		});
-	}
-
-	$(document).ready(function() {
-		// Get all posts
-		$.ajax({
-			type: "GET",
-			url: "http://localhost:3333/api/posts",
-			dataType : "json",
-			success: function(data) {
-				$.each(data, function( index, value ) {
-					$("#main-col").append(
-						$('<div/>', {'class': 'overflow-hidden mt-5', 'id': 'date' + index}).append(
-							$('<div/>', {'class': ''}).append(
-								$('<h5/>', {'class': '', text: value.title})
-							).append(
-								$('<p/>', {text: value.content})
-							)
-						)
-					);
-					if ('userId' in value) {
-						$.ajax({
-							type: "GET",
-							url: "http://localhost:3333/api/users/" + value.userId,
-							dataType : "json",
-							success: function(data) {
-								if (data != null) {
-									$("#date" + index).prepend(
-										$('<h6/>',{text: data.name + " (" + data.username + ")"})
-									)
-								}
-							},
-						});
-					}
-				});
-			},
-		});
-		$.ajax({
-			// Get all users for the
-			type: "GET",
-			url: "http://localhost:3333/api/users",
-			dataType : "json",
-			success: function(data) {
-				var users = new Map();
-				// add all users from userdata
-				$.each(data, function( index, value ) { users.set(value.id, value.name);});
-								
-				$("#side-col").append(
-					$("<select/>", {'class': 'form-select', 'id': 'select-user'})
-				).append(
-					$("<div/>", {'id': 'user-data'})
-				)
-				$('#select-user').on("change", getUser)
-				$('#select-user').append(
-					$("<option/>", {'value': '', text: 'Select a user', 'selected': 'selected'}).attr("disabled", true)
-				);
-				
-				users.forEach((value, key) => $('#select-user').append(
-					$("<option/>", {'value': key, 'text': value})
-				));
-			}
-		});
-	});
-	</script>
   </body>
 </html>
