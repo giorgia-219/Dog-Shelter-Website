@@ -60,94 +60,102 @@
 		</header>
 
 		<div class="container mt-3 h-400">
-			<div class="row">
+			<div class="row mx-3 mx-lg-0">
 					<h1>Dogs looking for a new home</h1>
 					<p>Adopt, don't shop. Browse our dogs, meet your match and give them the second chance they deserve.</p>
 			</div>
 		</div>
 
-		<div class="row g-4">
-        <!-- Sidebar Filters Column -->
-        <div class="col-lg-3">
-            <div class="card border-0 shadow-sm p-4 filter-sidebar" style="background-color: var(--light-bg); border-radius: 14px;">
-                <div class="d-flex justify-content-between align-items-center mb-4">
-                    <h5 class="mb-0 fw-bold">FILTERS</h5>
-                    <button id="clear-filters" class="btn btn-dark py-6" style="border-radius: 20px; padding: 6px 12px;">Clear all</button>
-                </div>
+		<div class="row g-4 mx-3 mx-lg-0">
+        <!-- Sidebar Filters Column: on the left for desktop, offcanvas (toggled by a button)for mobile -->
+			<div class="col-lg-3">
 
-                <!-- Gender Filter -->
-                <div class="filter-group mb-4">
-                    <h6 class="fw-bold mb-3">Gender</h6>
-                    <div class="form-check mb-2">
-                        <input class="form-check-input filter-gender" type="radio" name="genderFilter" id="genderAll" value="all" checked>
-                        <label class="form-check-label text-secondary" for="genderAll">All Genders</label>
-                    </div>
-                    <div class="form-check mb-2">
-                        <input class="form-check-input filter-gender" type="radio" name="genderFilter" id="genderM" value="M">
-                        <label class="form-check-label text-secondary" for="genderM">Male</label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input filter-gender" type="radio" name="genderFilter" id="genderF" value="F">
-                        <label class="form-check-label text-secondary" for="genderF">Female</label>
-                    </div>
-                </div>
+				<button class="btn btn-dark d-lg-none mb-3 d-flex justify-content-between align-items-center" type="button" data-bs-toggle="offcanvas" data-bs-target="#filterSidebar" aria-controls="filterSidebar">
+					<span><i class="bi bi-sliders"></i>Filter</span>
+				</button>
 
-                <hr class="my-3 opacity-25">
+				<div class="offcanvas-lg offcanvas-start filter-sidebar" tabindex="-1" id="filterSidebar" aria-labelledby="filterSidebarLabel">
 
-                <!-- Size Filter -->
-                <div class="filter-group mb-4">
-                    <h6 class="fw-bold mb-3">Size</h6>
-                    <div class="form-check mb-2">
-                        <input class="form-check-input filter-size" type="checkbox" value="S" id="sizeS">
-                        <label class="form-check-label text-secondary" for="sizeS">Small(&lt10kg) </label>
-                    </div>
-                    <div class="form-check mb-2">
-                        <input class="form-check-input filter-size" type="checkbox" value="M" id="sizeM">
-                        <label class="form-check-label text-secondary" for="sizeM">Medium (10-20kg)</label>
-                    </div>
-                    <div class="form-check mb-2">
-                        <input class="form-check-input filter-size" type="checkbox" value="L" id="sizeL">
-                        <label class="form-check-label text-secondary" for="sizeL">Large (20-30kg)</label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input filter-size" type="checkbox" value="XL" id="sizeXL">
-                        <label class="form-check-label text-secondary" for="sizeXL">XL (>30kg)</label>
-                    </div>
-                </div>
+					<div class="card shadow-sm p-4 filter-sidebar" style="background-color: var(--light-bg);">
+						<div class="d-flex justify-content-between align-items-center mb-4">
+							<h5 class="mb-0 fw-bold">FILTERS</h5>
+							<button id="clear-filters" class="btn btn-dark py-6" style="border-radius: 20px; padding: 6px 12px;">Clear all</button>
+						</div>
 
-                <hr class="my-3 opacity-25">
+						<!-- Gender Filter -->
+						<div class="filter-group mb-4">
+							<h6 class="fw-bold mb-3">Gender</h6>
+							<div class="form-check mb-2">
+								<input class="form-check-input filter-gender" type="radio" name="genderFilter" id="genderAll" value="all" checked>
+								<label class="form-check-label text-secondary" for="genderAll">All Genders</label>
+							</div>
+							<div class="form-check mb-2">
+								<input class="form-check-input filter-gender" type="radio" name="genderFilter" id="genderM" value="M">
+								<label class="form-check-label text-secondary" for="genderM">Male</label>
+							</div>
+							<div class="form-check">
+								<input class="form-check-input filter-gender" type="radio" name="genderFilter" id="genderF" value="F">
+								<label class="form-check-label text-secondary" for="genderF">Female</label>
+							</div>
+						</div>
 
-                <!-- Age Filter -->
-                <div class="filter-group">
-                    <h6 class="fw-bold mb-3" >Age Range</h6>
-                    <div class="form-check mb-2">
-                        <input class="form-check-input filter-age" type="checkbox" value="puppy" id="agePuppy">
-                        <label class="form-check-label text-secondary" for="agePuppy">Puppy (&lt1 year)</label>
-                    </div>
-                    <div class="form-check mb-2">
-                        <input class="form-check-input filter-age" type="checkbox" value="young" id="ageYoung">
-                        <label class="form-check-label text-secondary" for="ageYoung">Young (1-3 years)</label>
-                    </div>
-                    <div class="form-check mb-2">
-                        <input class="form-check-input filter-age" type="checkbox" value="adult" id="ageAdult">
-                        <label class="form-check-label text-secondary" for="ageAdult">Adult (3-8 years)</label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input filter-age" type="checkbox" value="senior" id="ageSenior">
-                        <label class="form-check-label text-secondary" for="ageSenior">Senior (>8 years)</label>
-                    </div>
-                </div>
-            </div>
-        </div>
+						<hr class="my-3 opacity-25">
 
-        <!-- Dogs Grid Column -->
-        <div class="col-lg-9">
-            <div id="dogs-container" class="row g-4">
-            </div>
-            <div id="no-results" class="text-center py-5 d-none">
-                <p class="text-muted mb-0">No dogs match your exact filter selection. Try removing a filter rule!</p>
-            </div>
-        </div>
+						<!-- Size Filter -->
+						<div class="filter-group mb-4">
+							<h6 class="fw-bold mb-3">Size</h6>
+							<div class="form-check mb-2">
+								<input class="form-check-input filter-size" type="checkbox" value="S" id="sizeS">
+								<label class="form-check-label text-secondary" for="sizeS">Small(&lt10kg) </label>
+							</div>
+							<div class="form-check mb-2">
+								<input class="form-check-input filter-size" type="checkbox" value="M" id="sizeM">
+								<label class="form-check-label text-secondary" for="sizeM">Medium (10-20kg)</label>
+							</div>
+							<div class="form-check mb-2">
+								<input class="form-check-input filter-size" type="checkbox" value="L" id="sizeL">
+								<label class="form-check-label text-secondary" for="sizeL">Large (20-30kg)</label>
+							</div>
+							<div class="form-check">
+								<input class="form-check-input filter-size" type="checkbox" value="XL" id="sizeXL">
+								<label class="form-check-label text-secondary" for="sizeXL">XL (>30kg)</label>
+							</div>
+						</div>
+
+						<hr class="my-3 opacity-25">
+
+						<!-- Age Filter -->
+						<div class="filter-group">
+							<h6 class="fw-bold mb-3" >Age Range</h6>
+							<div class="form-check mb-2">
+								<input class="form-check-input filter-age" type="checkbox" value="puppy" id="agePuppy">
+								<label class="form-check-label text-secondary" for="agePuppy">Puppy (&lt1 year)</label>
+							</div>
+							<div class="form-check mb-2">
+								<input class="form-check-input filter-age" type="checkbox" value="young" id="ageYoung">
+								<label class="form-check-label text-secondary" for="ageYoung">Young (1-3 years)</label>
+							</div>
+							<div class="form-check mb-2">
+								<input class="form-check-input filter-age" type="checkbox" value="adult" id="ageAdult">
+								<label class="form-check-label text-secondary" for="ageAdult">Adult (3-8 years)</label>
+							</div>
+							<div class="form-check">
+								<input class="form-check-input filter-age" type="checkbox" value="senior" id="ageSenior">
+								<label class="form-check-label text-secondary" for="ageSenior">Senior (>8 years)</label>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Dogs Grid Column -->
+			<div class="col-lg-9">
+				<div id="dogs-container" class="row g-4">
+				</div>
+				<div id="no-results" class="text-center py-5 d-none">
+					<p class="text-muted mb-0">No dogs match your exact filter selection. <br> Try removing some filters!</p>
+				</div>
+			</div>
     </div>
 </div>
 

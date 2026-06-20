@@ -89,21 +89,3 @@ function renderDogs(dogsArray) {
 }
 
 loadDogs();
-
-
-function applyFilters() {
-    const selectedGender = document.querySelector('.filter-gender:checked').value;
-    const selectedSizes = Array.from(document.querySelectorAll('.filter-size:checked')).map(cb => cb.value); 
-    const selectedAges = Array.from(document.querySelectorAll('.filter-age:checked')).map(cb => cb.value);
-
-    const filteredDogs = allDogs.filter(dog => {
-        const matchesGender = (selectedGender === 'all') || (dog.gender === selectedGender);
-        const matchesSize = (selectedSizes.length === 0) || selectedSizes.includes(dog.size);
-        const targetAgeCategory = getAgeCategory(parseInt(dog.age));
-        const matchesAge = (selectedAges.length === 0) || selectedAges.includes(targetAgeCategory);
-
-        return matchesGender && matchesSize && matchesAge;
-    });
-
-    renderDogs(filteredDogs);
-}
