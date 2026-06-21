@@ -79,7 +79,7 @@ function renderDogs(dogsArray) {
                                 <span>Size: ${dog.size} (${dog.weight || 'N/A'})</span>
                             </div>
                         </div>
-                        <a href="contact-us.html" class="btn btn-dark w-100 mt-2 py-2 fw-semibold" style="background-color: var(--primary-color); border: none; border-radius: 10px;">Adopt Me</a>
+                        <a href="dog-detail.html?id=${dog.id}" class="btn">Details</a>
                     </div>
                 </div>
             </div>

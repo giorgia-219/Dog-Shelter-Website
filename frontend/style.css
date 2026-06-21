@@ -74,6 +74,8 @@ label {
   color: var(--dark-primary-color);
 }
 
+
+
 .section-title {
   font-size: 1.3rem;
   font-weight: 700;
@@ -85,7 +87,7 @@ label {
 }
 
 body {
-  background: linear-gradient(180deg, var(--light-bg), var(--dark-bg));
+  background: var(--dark-bg);
 }
 
 /* ===========================
@@ -139,18 +141,37 @@ footer {
   border-color: var(--primary-color);
 }
 
-button.btn {
+.btn {
   background-color: var(--primary-color);
   border: none;
+  border-radius: 12px;
+  padding: 12px 20px;
+  font-weight: 600;
+  color: var(--light-bg);
+  transition: 0.2s ease;
+}
+
+
+.btn:hover {
+  background-color: transparent;
+  border: 2px solid var(--primary-color);
+  color: var(--primary-color);
+}
+
+.btn-negative {
+  border: 2px solid var(--primary-color);
+  background-color: transparent;
+  color: var(--primary-color);
+  text-decoration: none;
   border-radius: 12px;
   padding: 12px 20px;
   font-weight: 600;
   transition: 0.2s ease;
 }
 
-button.btn:hover {
-  background-color: var(--dark-primary-color);
-  transform: translateY(-1px);
+.btn-negative:hover {
+  background-color: var(--primary-color);
+  color: var(--light-bg)
 }
 
 /* index.html*/
@@ -172,18 +193,13 @@ button.btn:hover {
 
 /* Enforce fluid heights for uniform images within carousel */
 .hero-carousel-height {
-  height: 460px;
+  height: 200px;
 }
 
 @media (max-width: 768px) {
   .hero-carousel-height {
-    height: 320px;
+    height: 200px;
   }
-}
-
-.style-carousel-img {
-  object-fit: cover;
-  object-position: center;
 }
 
 /* Text readable gradient scrim positioned over bottom images */
@@ -193,7 +209,6 @@ button.btn:hover {
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 0.75) 100%);
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 

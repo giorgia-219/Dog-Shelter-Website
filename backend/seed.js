@@ -1,4 +1,4 @@
-// script to populate the database with sample dog data (temporary for testing and debugging)
+// populate the database with sample dog data
 
 const sequelize = require('./sequelize');
 
@@ -18,7 +18,7 @@ const sampleDogs = [
         size: 'M',
         weight: '14 kg',
         gender: 'M',
-        description: 'My absolute favorite thing is playing chase in the fenced yard with my foster siblings[cite: 349]. I am fast and love to zoom around[cite: 350]!',
+        description: 'My absolute favorite thing is playing chase in the fenced yard with my foster siblings. I am fast and love to zoom around!',
         imageUrl: 'img/dogImg/tommy.jpg'
     },
     {
@@ -47,7 +47,26 @@ const sampleDogs = [
         gender: 'F',
         description: 'Sweet and cuddly, perfect for apartment living.',
         imageUrl: 'img/dogImg/circe.jpg'
+    },
+    {
+        name: 'Bruschetta',
+        age: '2 y/o',
+        size: 'L',
+        weight: '22kg',
+        gender: 'F',
+        description: 'Bruschetta is the kind of dog who quietly steals hearts. She might be a little shy when meeting new people, but give her a few minutes and you will discover a gentle, affectionate companion who simply wants to be close to someone she can trust. Be it a walk in the park or a lazy afternoon on the couch, Luna is happiest with her favourite human. She is waiting for a family to show her that home is more than just a place.',
+        imageUrl: 'img/dogImg/bruschetta.jpg'
+    },
+    {
+        name: 'Chicco',
+        age: '13 y/o',
+        size: 'S',
+        weight: '6kg',
+        gender: 'M',
+        description: "A tiny little coffee bean overflowing with happy energy! He's looking for an active family ready to show him the world.",
+        imageUrl: 'img/dogImg/chicco.jpg'
     }
+
 ];
 
 async function seedDatabase() {

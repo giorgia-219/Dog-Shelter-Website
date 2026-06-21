@@ -1,10 +1,3 @@
-<!-- VISIT US PAGE: "come meet our dogs"
- embed map with google maps location and featured reviews
- phone numbers
- social media (facebook, instagram, whatsapp links on logos)
- opening hours
--->
-
 <!doctype html>
 <html lang="en">
 	<head>
@@ -20,7 +13,7 @@
 	</head>
 
 	<body class="vh-100">
-	
+
 		<!-- Navbar -->
 		<header>
 			<nav class="navbar navbar-expand-lg navbar-dark">
@@ -66,60 +59,51 @@
 			</nav>
 		</header>
 
-		<div class="container mt-4">
-        <div class="row mb-4">
-            <div class="col-12">
-                <h1 class="display-5 fw-bold">Visit Us</h1>
-                <p class="text-muted lead">Come meet our dogs and find your perfect match. We look forward to seeing you!</p>
-            </div>
+		<div id="loading-state" class="text-center py-5">
+            <div class="spinner-border text-dark" role="status"></div>
+            <p class="mt-2 text-muted">Loading profile details...</p>
         </div>
 
-        <div class="row g-4 align-items-stretch">
-            <div class="col-md-5 col-lg-4 d-flex flex-column gap-3">
+        <div id="dog-profile" class="row g-5 d-none my-2">
+
+            <div class="col-md-6">
+                <img id="dog-image" src="" class="img-fluid rounded shadow w-100 mx-2" style="max-height: 500px; object-fit: cover;">
+            </div>
+        
+            <div class="col-md-6 mb-3">
+                <h1 id="dog-name" class="display-4 fw-bold"></h1>
                 
-                <div class="card border-0 shadow-sm p-4" style="background-color: var(--light-bg); border-radius: 16px;">
-                    <h5 class="fw-bold mb-3" style="color: var(--dark-primary-color);">
-                        Opening Hours
-                    </h5>
-                    <ul class="list-unstyled mb-0 text-secondary d-flex flex-column gap-2" style="font-size: 0.95rem;">
-                        <div class="d-flex justify-content-between">
-                            <span class="fw-medium text-dark">Mon - Fri:</span>
-                            <span>09:30 - 11:30</span>
-                        </div>
-                        <div class="d-flex justify-content-between">
-                            <span class="fw-medium text-dark">Saturday:</span>
-                            <span>09:30 - 11:15</span>
-                        </div>
-                        <div class="d-flex justify-content-between">
-                            <span class="fw-medium text-dark">Sunday:</span>
-                            <span>By Appointment</span>
-                        </div>
-                    </ul>
+                <div class="card shadow-sm p-3" style="background-color: var(--light-bg); border-radius: 16px; max-width: 300px;">
+                    <div><strong>Age:</strong> <span id="dog-age"></span></div>
+                    <div><strong>Gender:</strong> <span id="dog-gender"></span></div>
+                    <div><strong>Size:</strong> <span id="dog-size"></span></div>
+                    <div><strong>Weight:</strong> <span id="dog-weight"></span></div>
                 </div>
 
-                <div class="card border-0 shadow-sm p-4 flex-grow-1" style="background-color: var(--light-bg); border-radius: 16px;">
-                    <h5 class="fw-bold mb-3" style="color: var(--dark-primary-color);">
-                        Shelter Location
-                    </h5>
-                    <p class="mb-2 fw-medium" style="color: var(--text-color);">
-                        Canile Sante Marie
-                    </p>
-                    <p class="text-muted small mb-3">
-                        Località Calcara Colle Ricciuto,<br>67067 Sante Marie (AQ), Abruzzo
-                    </p>
-                    <hr class="my-3 opacity-25">
-                    <p class="mb-1 text-dark small fw-medium">Call Us</p>
-                    <a href="tel:08631856611" class="text-decoration-none fw-bold" style="color: var(--accent-color);">0863 1856611</a>
+                <div class="row mt-5">
+                    <div class="col-lg-6">
+                        <h5 class="fw-bold mt-5">Ready to Adopt?</h5>
+                        <p class="small text-muted">Fill out our adoption form to connect with our volunteers.</p>
+                        <button type="button" class="btn py-2" ">Contact Us</button>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <h5 class="fw-bold mt-5">Not sure yet?</h5>
+                        <p class="small text-muted mt-3">Take a look at our other dogs.</p>
+                        <a href="adopt.html" class="btn-negative"> Back </a>
+                    </div>
                 </div>
+
             </div>
 
-            <div class="col-md-7 col-lg-8">
-                <div class="w-100 h-100 shadow-sm border-0 position-relative map-wrapper" style="border-radius: 16px; overflow: hidden; min-height: 400px;">
-				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2960.938370479542!2d13.208123176342838!3d42.08736997121948!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x132fea8913d05a4d%3A0x2c234b616a75214a!2sRifugio%20Per%20Cani.%20Canile%20rifugio!5e0!3m2!1sen!2sit!4v1782057587715!5m2!1sen!2sit" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>            </div>
-        		</div>
-    		</div>
-		</div>
-				<!-- Footer -->
+            <div class="mx-4">
+                <h5 class="fw-bold mt-4">About Me</h5>
+                <p id="dog-description" class="lead text-muted mb-4"></p>
+            </div>
+
+        </div>
+
+		<!-- Footer -->
 		<footer class="mt-5 py-5 px-5">
 			<div class="row g-4">
 
@@ -160,7 +144,9 @@
 			</div>
 		</footer>
 
-		<!-- Option 1: Bootstrap Bundle with Popper -->
-		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+	<!-- Option 1: Bootstrap Bundle with Popper -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+	<script src="dog-detail.js"></script>
 	</body>
 </html>
