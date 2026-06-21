@@ -20,7 +20,7 @@ async function getById(req, res) {
 
 async function create(req, res) {
     try {
-        const newInquiry = await models.inquiry.create(req.body);
+        const newInquiry = await models.inquiries.create(req.body);
         res.status(201).json({ success: true, message: "Inquiry submitted!", data: newInquiry });
     } catch (error) {
         res.status(400).json({ success: false, message: error.message });

@@ -71,15 +71,15 @@
 					<div class="section-title">About You</div>
 						<div class="row mb-4">
 							<div class="col-md-6 mb-2">
-								<input type="text" class="form-control" id="firstName" placeholder="First Name" required>
+								<input type="text" class="form-control" id="firstName" name="firstName" placeholder="First Name" required>
 							</div>
 
 							<div class="col-md-6 mb-2">
-								<input type="text" class="form-control" id="lastName" placeholder="Last Name" required>
+								<input type="text" class="form-control" id="lastName" name="lastName" placeholder="Last Name" required>
 							</div>
 						</div>
 						<div class="mb-4">
-							<input type="email" class="form-control" id="email" placeholder="Email Address" required>
+							<input type="email" class="form-control" id="email" name="email" placeholder="Email Address" required>
 							<div class="invalid-feedback" id="email-feedback">Please provide an email address.</div>
 						</div>
 
@@ -104,7 +104,7 @@
 
 							<div class="radio-group">
 								<div class="form-check">
-								<input class="form-check-input" type="radio" name="currentPets" id="petsYes" value="yes" required>
+								<input class="form-check-input" type="radio" name="currentPets" id="petsYes" value="yes">
 								<label class="form-check-label" for="petsYes"> Yes </label>
 								</div>
 
@@ -122,31 +122,31 @@
 							<label class="form-label d-block"> Which pets have you had before? </label>
 							<div class="checkbox-group">
 								<div class="form-check">
-								<input class="form-check-input" type="checkbox" id="prevDog">
+								<input class="form-check-input" type="checkbox" name="previousPets" id="prevDog" value="dog">
 								<label class="form-check-label" for="prevDog">Dog</label>
 								</div>
 								<div class="form-check">
-								<input class="form-check-input" type="checkbox" id="prevCat">
+								<input class="form-check-input" type="checkbox" name="previousPets" id="prevCat" value="cat">
 								<label class="form-check-label" for="prevCat">Cat</label>
 								</div>
 								<div class="form-check">
-								<input class="form-check-input" type="checkbox" id="prevBird">
+								<input class="form-check-input" type="checkbox" name="previousPets" id="prevBird" value="bird">
 								<label class="form-check-label" for="prevBird">Bird</label>
 								</div>
 								<div class="form-check">
-								<input class="form-check-input" type="checkbox" id="prevRodent">
+								<input class="form-check-input" type="checkbox" name="previousPets" id="prevRodent" value="rodent">
 								<label class="form-check-label" for="prevRodent">Rodent</label>
 								</div>
 								<div class="form-check">
-								<input class="form-check-input" type="checkbox" id="prevFish">
+								<input class="form-check-input" type="checkbox" name="previousPets" id="prevFish" value="fish">
 								<label class="form-check-label" for="prevFish">Fish</label>
 								</div>
 								<div class="form-check">
-								<input class="form-check-input" type="checkbox" id="prevReptile">
+								<input class="form-check-input" type="checkbox" name="previousPets" id="prevReptile" value="reptile">
 								<label class="form-check-label" for="prevReptile">Reptile</label>
 								</div>
 								<div class="form-check">
-								<input class="form-check-input" type="checkbox" id="prevOther">
+								<input class="form-check-input" type="checkbox" name="previousPets" id="prevOther" value="other">
 								<label class="form-check-label" for="prevOther">Other</label>
 								</div>
 							</div>
@@ -158,31 +158,31 @@
 							<label class="form-label"> Which pets do you currently have? </label>
 							<div class="checkbox-group">
 								<div class="form-check">
-								<input class="form-check-input" type="checkbox" id="currDog">
+								<input class="form-check-input" type="checkbox" name="currentPets" id="currDog" value="dog">
 								<label class="form-check-label" for="currDog">Dog</label>
 								</div>
 								<div class="form-check">
-								<input class="form-check-input" type="checkbox" id="currCat">
+								<input class="form-check-input" type="checkbox" name="currentPets" id="currCat" value="cat">
 								<label class="form-check-label" for="currCat">Cat</label>
 								</div>
 								<div class="form-check">
-								<input class="form-check-input" type="checkbox" id="currBird">
+								<input class="form-check-input" type="checkbox" name="currentPets" id="currBird" value="bird">
 								<label class="form-check-label" for="currBird">Bird</label>
 								</div>
 								<div class="form-check">
-								<input class="form-check-input" type="checkbox" id="currRodent">
+								<input class="form-check-input" type="checkbox" name="currentPets" id="currRodent" value="rodent">
 								<label class="form-check-label" for="currRodent">Rodent</label>
 								</div>
 								<div class="form-check">
-								<input class="form-check-input" type="checkbox" id="currFish">
+								<input class="form-check-input" type="checkbox" name="currentPets" id="currFish" value="fish">
 								<label class="form-check-label" for="currFish">Fish</label>
 								</div>
 								<div class="form-check">
-								<input class="form-check-input" type="checkbox" id="currReptile">
+								<input class="form-check-input" type="checkbox" name="currentPets" id="currReptile" value="reptile">
 								<label class="form-check-label" for="currReptile">Reptile</label>
 								</div>
 								<div class="form-check">
-								<input class="form-check-input" type="checkbox" id="currOther">
+								<input class="form-check-input" type="checkbox" name="currentPets" id="currOther" value="other">
 								<label class="form-check-label" for="currOther">Other</label>
 								</div>
 							</div>
@@ -194,17 +194,17 @@
 						<div class="row justify-content-between">
 							<div class="col-md-3 mb-2">
 								<label class="form-label">Breed</label>
-								<input type="text" class="form-control" required>
+								<input type="text" class="form-control" id="dogBreed" name="dogBreed">
 							</div>
 
 							<div class="col-md-2 mb-2">
 								<label class="form-label">Age</label>
-								<input type="number" class="form-control" min="0" required>
+								<input type="number" class="form-control" id="dogAge" name="dogAge" min="0">
 							</div>
 
 							<div class="col-md-2 mb-2">
 								<label class="form-label">Gender</label>
-								<select class="form-select" required>
+								<select class="form-select" id="dogGender" name="dogGender">
 									<option selected value="" disabled>Select</option>
 									<option>Male</option>
 									<option>Female</option>
@@ -213,7 +213,7 @@
 
 							<div class="col-md-2 mb-2">
 								<label class="form-label"> Is the dog sterilized? </label>
-								<select class="form-select" required>
+								<select class="form-select" id="dogSterilized" name="dogSterilized">
 								<option selected value="" disabled>Select</option>
 								<option>Yes</option>
 								<option>No</option>
@@ -228,7 +228,7 @@
 
 					<div class=" col-md-3 mb-4">
 						<label class="form-label">Preferred Age</label>
-						<select class="form-select" required>
+						<select class="form-select" name="preferredDogAge" id="preferredDogAge" required>
 							<option selected>No preference</option>
 							<option>Puppy (&lt; 1 year)</option>
 							<option>Young (1 - 3 years)</option>
@@ -240,7 +240,7 @@
 
 					<div class=" col-md-3 mb-4">
 						<label class="form-label">Preferred Gender</label>
-						<select class="form-select" required>
+						<select class="form-select" name="preferredDogGender" id="preferredDogGender" required>
 							<option selected>No preference</option>
 							<option>Male</option>
 							<option>Female</option>
@@ -249,7 +249,7 @@
 
 					<div class=" col-md-3 mb-4">
 						<label class="form-label">Preferred Size</label>
-						<select class="form-select" required>
+						<select class="form-select" name="preferredDogSize" id="preferredDogSize" required>
 							<option selected>No preference</option>
 							<option>Small (&lt; 10kg)</option>
 							<option>Medium (10 - 20kg)</option>
@@ -260,41 +260,36 @@
 
 					<div class=" col-md-3 mb-4">
 						<label class="form-label">Preferred Activity Level</label>
-						<select class="form-select" required>
-							<option selected value="" disabled>Select activity level</option>
+						<select class="form-select" name="preferredDogActivityLevel" id="preferredDogActivityLevel">
+							<option selected value="" disabled>No preference</option>
 							<option>Very Active</option>
 							<option>Active</option>
 							<option>Laid Back</option>
 							<option>Lap Dog</option>
 						</select>
-
 					</div>
 
 					<!-- LIFESTYLE -->
 					<div class="section-title">Dog Lifestyle</div>
 
 					<div class="mb-4">
-					<label class="form-label"> Where will the dog live? </label>
-						<div class="checkbox-group">
-							<div class="form-check">
-							<input class="form-check-input" type="checkbox" id="indoor">
-							<label class="form-check-label" for="indoor"> Indoor </label>
-							</div>
-							<div class="form-check">
-							<input class="form-check-input" type="checkbox" id="outdoor">
-							<label class="form-check-label" for="outdoor"> Outdoor </label>
-							</div>
-						</div>
+					<label class="form-label"> Where will the dog spend most of its time? </label>
+						<select class="form-select" name="dogSpace" id="dogSpace" required>
+							<option selected value="" disabled>Select</option>
+							<option>Indoors</option>
+							<option>Outdoors</option>
+							<option>Both</option>
+						</select>
 					</div>
 
 					<div class="mb-4">
 						<label class="form-label"> Who will regularly interact with the dog? </label>
-						<textarea class="form-control" placeholder="Children, elderly people etc."></textarea>
+						<textarea class="form-control" name="dogOwners" id="dogOwners" placeholder="Children, elderly people etc."></textarea>
 					</div>
 
 					<div class="mb-4">
 						<label class="form-label"> Are you interested in training your future dog? </label>
-						<textarea class="form-control" rows="4" placeholder="Puppy class, obedience, agility, etc."></textarea>
+						<textarea class="form-control" name="dogTraining" id="dogTraining" rows="4" placeholder="Puppy class, obedience, agility, etc."></textarea>
 					</div>
 
 					<button type="submit" class="btn btn-dark submit-btn"> Submit </button>

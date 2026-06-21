@@ -1,25 +1,35 @@
-// We export a function that defines the model.
 const { DataTypes } = require('sequelize');
 
-// This function will automatically receive as parameter the Sequelize connection object.
 module.exports = (sequelize) => {
 	sequelize.define('inquiries', {
-		// The following specification of the 'id' attribute could be omitted
-		// since it is the default.
+
 		id: {
 			allowNull: false,
 			autoIncrement: true,
 			primaryKey: true,
 			type: DataTypes.INTEGER
 		},
+
 		firstName: DataTypes.STRING,
 		lastName: DataTypes.STRING,
 		email: DataTypes.STRING,
+
     	isFirstTimeOwner: DataTypes.BOOLEAN,
 		hasCurrentPets: DataTypes.BOOLEAN,
+		previousPets: DataTypes.STRING,
+		currentPets: DataTypes.STRING,
+		dogBreed: DataTypes.STRING,
+		dogAge: DataTypes.STRING,
+		dogGender: DataTypes.STRING,
+		dogSterilized: DataTypes.BOOLEAN,
+
 		preferredAge: DataTypes.STRING,
-		preferredSize: DataTypes.STRING,
 		preferredGender: DataTypes.STRING,
-		preferredActivityLevel: DataTypes.STRING
+		preferredSize: DataTypes.STRING,
+		preferredActivityLevel: DataTypes.STRING,
+
+		dogSpace: DataTypes.STRING,
+		dogOwners: DataTypes.STRING,
+		dogTraining: DataTypes.STRING
 	});
 };

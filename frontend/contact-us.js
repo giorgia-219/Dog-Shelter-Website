@@ -34,8 +34,26 @@ if (form) {
             firstName: document.getElementById('firstName').value,
             lastName: document.getElementById('lastName').value,
             email: document.getElementById('email').value,
+
             isFirstTimeOwner: document.getElementById('ownerYes').checked,
-            preferredAge: form.querySelector('select:nth-of-type(1)').value,
+            hasCurrentPets: document.getElementById('petsYes').checked,
+
+            previousPets: Array.from(document.querySelectorAll('input[name="previousPets"]:checked')).map(cb => cb.value).join(', '),
+            currentPets: Array.from(document.querySelectorAll('input[name="currentPets"]:checked')).map(cb => cb.value).join(', '),
+            
+            dogBreed: document.getElementById('dogBreed')?.value || "",
+            dogAge: document.getElementById('dogAge')?.value || "",
+            dogGender: document.getElementById('dogGender')?.value || "",
+            dogSterilized: document.getElementById('dogSterilized')?.value === "Yes" || false,
+
+            preferredAge: document.getElementById('preferredDogAge')?.value || "",
+            preferredGender: document.getElementById('preferredDogGender')?.value || "",
+            preferredSize: document.getElementById('preferredDogSize')?.value || "",
+            preferredActivityLevel: document.getElementById('preferredDogActivityLevel')?.value || "",
+
+            dogSpace: document.getElementById('dogSpace')?.value || "",
+            dogOwners: document.getElementById('dogOwners')?.value || "",
+            dogTraining: document.getElementById('dogTraining')?.value || ""
         };
 
         try {
@@ -46,12 +64,13 @@ if (form) {
             });
 
             const result = await response.json();
+
             if (result.success) {
                 // Replace the form container with a success message
                 document.querySelector('.form-container').innerHTML = `
                     <div class="text-center py-5">
-                        <h2 style="color: var(--primary-color);">Grazie, ${formData.firstName}!</h2>
-                        <p class="text-muted">Your inquiry has been successfully received. Our volunteers will get in touch soon.</p>
+                        <h2 style="color: var(--primary-color);">Thanks, ${formData.firstName}!</h2>
+                        <p class="text-muted">We received your inquiry. Our volunteers will get in touch soon.</p>
                     </div>
                 `;
             }
@@ -62,7 +81,7 @@ if (form) {
 }
 
 
-// FORM LOGIC on contact-us.html
+// FORM LOGIC
 
 //first time owner
 
