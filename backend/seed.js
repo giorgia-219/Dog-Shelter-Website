@@ -65,6 +65,15 @@ const sampleDogs = [
         gender: 'M',
         description: "A tiny little coffee bean overflowing with happy energy! He's looking for an active family ready to show him the world.",
         imageUrl: 'img/dogImg/chicco.jpg'
+    },
+    {
+        name: 'Bella',
+        age: '3 y/o',
+        size: 'L',
+        weight: '26kg',
+        gender: 'F',
+        description: "Beautiful by name, beautiful by nature. She has a magical way of making you feel like the most important person in the world with just one look",
+        imageUrl: 'img/dogImg/bella.jpg'
     }
 
 ];

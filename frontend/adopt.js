@@ -22,10 +22,14 @@ function getAgeCategory(ageInYears) {
 function setupFilters() {
     const inputs = document.querySelectorAll('.filter-gender, .filter-size, .filter-age');
     inputs.forEach(input => {
-        input.addEventListener('change', applyFilters);
+        input.addEventListener('change', (e) => {
+            e.stopPropagation(); 
+            applyFilters();
+        });
     });
 
-    document.getElementById('clear-filters').addEventListener('click', () => {
+    document.getElementById('clear-filters').addEventListener('click', (e) => {
+        e.stopPropagation();
         document.getElementById('genderAll').checked = true;
         document.querySelectorAll('.filter-size, .filter-age').forEach(cb => cb.checked = false);
         applyFilters();
@@ -63,8 +67,8 @@ function renderDogs(dogsArray) {
     dogsArray.forEach(dog => {
         const dogCard = `
             <div class="col-md-6 col-lg-4">
-                <div class="card h-100 shadow-sm border-0 position-relative transition-card" style="background-color: var(--light-bg); border-radius: 16px; overflow: hidden;">
-                <img src="${dog.imageUrl || 'img/puppies_shelter.jpg'}" class="card-img-top" alt="${dog.name}" style="object-fit: cover; height: 240px;">
+                <div class="dog-card" >
+                <img src="${dog.imageUrl || 'img/placeholder.jpg'}" class="card-img-top" alt="${dog.name}" style="object-fit: cover; height: 240px;">
                     <div class="card-body p-4 d-flex flex-column justify-content-between">
                         <div>
                             <div class="d-flex justify-content-between align-items-center mb-2">

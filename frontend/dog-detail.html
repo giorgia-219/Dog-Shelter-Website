@@ -59,49 +59,52 @@
 			</nav>
 		</header>
 
-		<div id="loading-state" class="text-center py-5">
-            <div class="spinner-border text-dark" role="status"></div>
-            <p class="mt-2 text-muted">Loading profile details...</p>
-        </div>
 
-        <div id="dog-profile" class="row g-5 d-none my-2">
+		<main class="container my-4">
+			<div id="loading-state" class="text-center py-5">
+				<div class="spinner-border text-dark" role="status"></div>
+				<p class="mt-2 text-muted">Loading profile details...</p>
+			</div>
 
-            <div class="col-md-6">
-                <img id="dog-image" src="" class="img-fluid rounded shadow w-100 mx-2" style="max-height: 500px; object-fit: cover;">
-            </div>
-        
-            <div class="col-md-6 mb-3">
-                <h1 id="dog-name" class="display-4 fw-bold"></h1>
-                
-                <div class="card shadow-sm p-3" style="background-color: var(--light-bg); border-radius: 16px; max-width: 300px;">
-                    <div><strong>Age:</strong> <span id="dog-age"></span></div>
-                    <div><strong>Gender:</strong> <span id="dog-gender"></span></div>
-                    <div><strong>Size:</strong> <span id="dog-size"></span></div>
-                    <div><strong>Weight:</strong> <span id="dog-weight"></span></div>
-                </div>
+			<div id="dog-profile" class="row g-4 d-none">
 
-                <div class="row mt-5">
-                    <div class="col-lg-6">
-                        <h5 class="fw-bold mt-5">Ready to Adopt?</h5>
-                        <p class="small text-muted">Fill out our adoption form to connect with our volunteers.</p>
-                        <button type="button" class="btn py-2" ">Contact Us</button>
-                    </div>
+				<div class="col-md-6 mb-4">
+					<img id="dog-image" src="" class="img-fluid rounded shadow w-100" style="max-height: 500px; object-fit: cover;">
+				</div>
+			
+				<div class="col-md-6 mb-3">
+					<h1 id="dog-name" class="display-4 fw-bold"></h1>
+					
+					<div class="card shadow-sm p-3" style="background-color: var(--light-bg); border-radius: 16px; max-width: 300px;">
+						<div><strong>Age:</strong> <span id="dog-age"></span></div>
+						<div><strong>Gender:</strong> <span id="dog-gender"></span></div>
+						<div><strong>Size:</strong> <span id="dog-size"></span></div>
+						<div><strong>Weight:</strong> <span id="dog-weight"></span></div>
+					</div>
 
-                    <div class="col-lg-6">
-                        <h5 class="fw-bold mt-5">Not sure yet?</h5>
-                        <p class="small text-muted mt-3">Take a look at our other dogs.</p>
-                        <a href="adopt.html" class="btn-negative"> Back </a>
-                    </div>
-                </div>
+					<div class="row mt-4">
+						<div class="col-sm-6 mb-4 mb-sm-0">
+							<h5 class="fw-bold">Ready to Adopt?</h5>
+							<p class="small text-muted">Fill out our adoption form to connect with our volunteers.</p>
+							<a href="contact-us.html" class="btn py-2">Contact Us</a>
+						</div>
 
-            </div>
+						<div class="col-sm-6">
+							<h5 class="fw-bold">Not sure yet?</h5>
+							<p class="small text-muted">Take a look at our other dogs.</p>
+							<a href="adopt.html" class="btn-negative"> Back </a>
+						</div>
+					</div>
 
-            <div class="mx-4">
-                <h5 class="fw-bold mt-4">About Me</h5>
-                <p id="dog-description" class="lead text-muted mb-4"></p>
-            </div>
+				</div>
 
-        </div>
+				<div class="col-12 px-3">
+					<h5 class="fw-bold mt-4">About Me</h5>
+					<p id="dog-description" class="lead text-muted mb-4"></p>
+				</div>
+
+			</div>
+		</main>
 
 		<!-- Footer -->
 		<footer class="mt-5 py-5 px-5">
