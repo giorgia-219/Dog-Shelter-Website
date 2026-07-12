@@ -11,7 +11,7 @@ The backend is written in NodeJS and stores the data in a SQLite database.
 This project was tested using node version v24.16.0
 
 ## Structure
-
+```text
 ├── backend/                  
 │   ├── express/              # routes and handlers (dogs, inquiries)
 │   ├── sequelize/            # database connection, schemas, models
@@ -23,9 +23,8 @@ This project was tested using node version v24.16.0
 │   ├── dog-detail.html/.js   # dynamic single profile viewer
 │   ├── contact-us.html/.js   # multistep validation inquiry form
 │   └── style.css             # custom color tokens and card layout overrides
-├── doc/					  # 3 project presentations (idea/zwischenstand/final)
-└── Labs/                     # lab exercises (ignore for core app)
-
+└── doc/					  # 3 project presentations (idea/zwischenstand/final)
+```
 ## NodeJS
 
 To run the backend node is required. To install it use one of the following methods
@@ -53,4 +52,4 @@ You can start the backend using
 
 ## Frontend
 
-Just open index.html in a browser. Use localhost or a live server VS code extension to interact with the database (i.e. to see dogs and send forms)
+Just open index.html in a browser. Use localhost or a live server VScode extension to interact with the database (i.e. to see dogs and send forms)
